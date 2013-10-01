@@ -1,0 +1,19 @@
+@media (min-width: 1000px) {
+    .page {
+        margin: auto;
+        width: 1000px;
+    }
+}
+
+.header {
+    text-align: center;
+}
+
+.header_title {
+    font-family: Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.header_title:first-letter {
+    color: red;
+}

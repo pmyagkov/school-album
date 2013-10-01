@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/backbone.js"></script>
+    <script type="text/javascript" src="js/lib/handlebars.js"></script>
+
+    <script type="text/javascript" src="js/models/Utils.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+
+    <script type="text/javascript" src="js/models/AboutModel.js"></script>
+    <script type="text/javascript" src="js/models/StudentModel.js"></script>
+    <script type="text/javascript" src="js/collections/StudentCollection.js"></script>
+
+    <script type="text/javascript" src="js/views/BaseView.js"></script>
+    <script type="text/javascript" src="js/views/AboutView.js"></script>
+    <script type="text/javascript" src="js/views/StudentsView.js"></script>
+
+
+    <script id="students-view" type="text/x-handlebars-template">
+        <ul class="student-list">
+            {{#each .}}
+            <li>{{name}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script id="about-view" type="text/x-handlebars-template">
+        <div class="about">
+            {{about}}
+        </div>
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+    <title>Выпускной альбом Школы Разработки Интерфейсов 2013</title>
+</head>
+<body>
+<div class="page">
+    <div class="header">
+        <h1 class="header header_title">Выпускной альбом ШРИ</h1>
+    </div>
+
+    <div class="content">
+
+    </div>
+
+
+    <div class="footer">
+
+    </div>
+</div>
+
+</body>
+</html>
