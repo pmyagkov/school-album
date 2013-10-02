@@ -17,25 +17,8 @@ App.BaseView = Backbone.View.extend({
     render: function () {
         "use strict";
 
-        if (!App.BaseView.renderedViews) {
-            App.BaseView.renderedViews = [];
-        }
-
         var str = this.template(this.model.toJSON());
-        if (_.any(App.BaseView.renderedViews, function (e, i) {
-            return e !== this;
-        })) {
-            this.$el.append(str);
-        }
-        else {
-            this.$el.html(str);
-        }
-
-        if (!_.any(App.BaseView.renderedViews, function (e, i) {
-            return e === this;
-        })) {
-            App.BaseView.renderedViews.push(this);
-        }
+        this.$el.append(str);
 
         return this;
     }

@@ -13,21 +13,49 @@
     <script type="text/javascript" src="js/models/Utils.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
 
+    <script type="text/javascript" src="js/Router.js"></script>
+
+    <script type="text/javascript" src="js/models/AppState.js"></script>
     <script type="text/javascript" src="js/models/AboutModel.js"></script>
     <script type="text/javascript" src="js/models/StudentModel.js"></script>
     <script type="text/javascript" src="js/collections/StudentCollection.js"></script>
 
+    <script type="text/javascript" src="js/views/ViewFactory.js"></script>
+
     <script type="text/javascript" src="js/views/BaseView.js"></script>
     <script type="text/javascript" src="js/views/AboutView.js"></script>
+    <script type="text/javascript" src="js/views/StudentView.js"></script>
     <script type="text/javascript" src="js/views/StudentsView.js"></script>
 
 
     <script id="students-view" type="text/x-handlebars-template">
-        <ul class="student-list">
-            {{#each .}}
-            <li>{{name}}</li>
-            {{/each}}
-        </ul>
+
+        <div class="students">
+            <h2 class="students-title">Студенты школы:</h2>
+            <ul class="student-list">
+                {{#each .}}
+                <li class="student-list__item">
+                    <span class="student-list__item__userpic">
+                        <img src="{{userpic}}" height="50" width="50">
+                    </span>
+
+                    <span class="student-list__item__name">
+                        <a class="link" href="#students/{{id}}">{{name}}</a>
+                    </span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+    </script>
+
+    <script id="student-view" type="text/x-handlebars-template">
+
+        <div class="student">
+            <div class="student__name">{{name}}</div>
+            <div class="student__about">{{about}}</div>
+        </div>
+
     </script>
 
     <script id="about-view" type="text/x-handlebars-template">
@@ -44,6 +72,17 @@
 <div class="page">
     <div class="header">
         <h1 class="header header_title">Выпускной альбом ШРИ</h1>
+        <ul class="header__links">
+            <li class="header__links__item">
+                <a href="#students">Студенты</a>
+            </li>
+            <li class="header__links__item">
+                <a href="#lectures">Лекции</a>
+            </li>
+            <li class="header__links__item">
+                <a href="#lecturers">Лекторы</a>
+            </li>
+        </ul>
     </div>
 
     <div class="content">

@@ -1,4 +1,6 @@
-window.data = {
+var App = App || {};
+
+App.data = {
     information: {about: "Что-то о ШРИ"},
     students: [
         {

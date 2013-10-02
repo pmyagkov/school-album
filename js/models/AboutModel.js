@@ -1,6 +1,6 @@
 /*global Backbone*/
 var App = App || {};
 
-App.AboutModel = Backbone.Model.extend({
+App.InformationModel = Backbone.Model.extend({
 
 });

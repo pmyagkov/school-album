@@ -1,0 +1,19 @@
+.student-list__item {
+    line-height: 50px;
+}
+
+.student-list__item__userpic {
+    display: inline-block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.student-list__item__name {
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 0 10px;
+}

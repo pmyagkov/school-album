@@ -1,12 +1,27 @@
+/* global _, Backbone*/
+
 var App = App || {};
 
-jQuery(function ($) {
+jQuery(function () {
     "use strict";
 
-    var about = new App.AboutModel(window.data.information);
-    var aboutView = new App.AboutView({model: about, el: ".content"});
-    aboutView.render();
-    /*    var students = new App.StudentCollection(window.data.students);
-     var studentsView = new App.StudentsView({model: students, el: ".content"});
-     studentsView.render();*/
+    App.events = _.extend({}, Backbone.Events);
+
+    var layoutObj = {
+        layouts : {
+            "students" : ["about", "students"],
+            "student" : ["student"]
+        },
+        el: ".content"
+    };
+
+    // App.data contains all the data
+
+    App.events = _.extend({}, Backbone.Events);
+
+    App.appState = new App.AppState(layoutObj, App.data);
+
+    App.router = new App.Router();
+    Backbone.history.start();
+
 });

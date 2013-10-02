@@ -13,9 +13,8 @@ App.Utils = {
 
         var regex = /[A-Z]*[a-z\d]+(?=[A-Z]|$)/g;
 
-        var result = "";
         var match = regex.exec(str);
-        result = match.length ? convert(match[0]) : str;
+        var result = match && match.length ? convert(match[0]) : str;
         if (!match) {
             return str;
         }
