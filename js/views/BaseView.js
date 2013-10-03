@@ -21,6 +21,12 @@ App.BaseView = Backbone.View.extend({
         this.$el.append(str);
 
         return this;
+    },
+
+    clean: function () {
+        "use strict";
+
+        this.$el.empty();
     }
 
 });

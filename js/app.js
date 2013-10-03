@@ -7,21 +7,18 @@ jQuery(function () {
 
     App.events = _.extend({}, Backbone.Events);
 
-    var layoutObj = {
-        layouts : {
-            "students" : ["about", "students"],
-            "student" : ["student"]
-        },
-        el: ".content"
+    var layouts = {
+        "main" :    {route: "main", views: [{name: "about", el: ".content"}], isDefault: true} ,
+        "students": {route: "students", views: [{name: "students", el: ".content"}]},
+        "student" : {route: "students/:i", views: [{name: "student", el: ".content"}]}
     };
 
     // App.data contains all the data
-
     App.events = _.extend({}, Backbone.Events);
 
-    App.appState = new App.AppState(layoutObj, App.data);
+    App.appState = new App.AppState(layouts, App.data);
 
-    App.router = new App.Router();
+    App.router = new App.Router(App.appState);
     Backbone.history.start();
 
 });
