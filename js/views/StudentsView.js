@@ -9,5 +9,6 @@ App.StudentsView = App.BaseView.extend({
     initialize: function () {
         "use strict";
 
+        App.BaseView.prototype.initialize.apply(this, arguments);
     }
 });

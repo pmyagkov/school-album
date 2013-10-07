@@ -1,34 +1,67 @@
+@import "reset.css";
 @import "students.css";
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
     .page {
         margin: auto;
-        width: 800px;
+        width: 1000px;
     }
 }
 
 body {
     font-family: Arial, sans-serif;
+    color: black;
 }
 
 .link {
+    color: #5e5e5e;
+    border-bottom: 1px #5e5e5e dashed;
+}
 
+.link:hover {
+    color: #ff3a3f;
+    border-bottom: 1px #ff3a3f dashed;
 }
 
 .header {
     text-align: center;
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
 }
 
-.header_title,
-.students-title{
+.header__title,
+.students-title {
     font-weight: 600;
     font-family: Verdana, sans-serif;
 }
-
-.header_title:first-letter {
+.header__title-link {
+    border: 0;
+}
+.header__title-link__first-letter {
     color: red;
 }
 
-ul {
-    list-style-type: none;
+.header__title-link__first-letter_rotate {
+
+}
+
+.header__title-link {
+
+}
+
+.header__title,
+.header__links {
+    float: left;
+    margin: 0;
+}
+
+.header__links__item {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.header__links__item_current {
+    border-bottom-style: solid;
+    font-weight: bold;
 }

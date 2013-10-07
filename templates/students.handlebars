@@ -1,0 +1,22 @@
+<div class="students">
+    <h2 class="students-title">Студенты школы:</h2>
+    <ul class="student-list">
+        {{#each .}}
+            <li class="student-list__item">
+                    <span class="student-list__item__userpic">
+                        <img src="{{userpic}}" height="50" width="50">
+                    </span>
+
+                    <span class="student-list__item__name">
+                        <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
+                    </span>
+
+                <ul class="socials">
+                    {{#each links}}
+                        <li class="socials__item socials__item_{{key}}"></li>
+                    {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+    </ul>
+</div>

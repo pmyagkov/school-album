@@ -17,3 +17,31 @@
     text-align: center;
     margin: 0 0 0 10px;
 }
+
+.socials {
+    padding: 0;
+    overflow: hidden;
+}
+
+.socials__item {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 7px 0 0;
+}
+
+.socials__item__vk::after {
+    content: "vk";
+}
+
+.socials__item__facebook::after {
+    content: "fb";
+}
+
+.socials__item__github::after {
+    content: "gh";
+}
+
+.socials__item__ya::after {
+    content: "ya";
+}
