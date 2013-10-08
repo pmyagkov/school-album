@@ -1,3 +1,5 @@
+/* global require */
+
 (function () {
     'use strict';
 
@@ -7,12 +9,14 @@
         // Project configuration.
         grunt.initConfig({
             jasmine: {
-                pivotal: {
+                test: {
                     src: ['js/models/*.js'],
                     options: {
                         specs: 'js/specs/*Spec.js',
-                        helpers: 'js/specs/*Helper.js',
-                        vendor: ['js/lib/underscore.js', 'js/lib/Backbone.js', 'js/lib/jQuery.js']
+                        template: require('grunt-template-jasmine-requirejs'),
+                        templateOptions: {
+                            requireConfigFile: 'js/config.js'
+                        }
                     }
                 }
             },
@@ -40,20 +44,25 @@
                 handlebars: {
                     files: 'templates/*.handlebars',
                     tasks: ['handlebars:compile']
+                },
+                jasmine: {
+                    files: ['js/specs/*.js', 'js/app/*.js', 'js/collections/*.js', 'js/models/*.js', 'js/views/*.js'],
+                    tasks: ['jasmine:test']
                 }
             },
 
             handlebars: {
                 compile: {
                     files: {
-                        'templates/compiled/templates.js': "templates/*.handlebars"
+                        'js/app/compiled/templates.js': "templates/*.handlebars"
                     },
                     options: {
-                        namespace: 'App.templates',
+                        namespace: 'templates',
                         wrapped: true,
+                        amd: true,
                         processName: function(filePath) {
-                            var splitted = filePath.split('/');
-                            return splitted[splitted.length - 1].split('.')[0];
+                            var parts = filePath.split('/');
+                            return parts[parts.length - 1].split('.')[0];
                         }
                     }
                 }
@@ -70,7 +79,7 @@
         grunt.loadNpmTasks('grunt-contrib-handlebars');
 
         // Default task(s).
-        grunt.registerTask('test', ['handlebars:compile', 'jasmine', 'connect', 'reload', 'watch']);
+        grunt.registerTask('default', ['handlebars:compile', 'jasmine:test', 'connect', 'reload', 'watch']);
 
     };
 
