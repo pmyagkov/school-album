@@ -5,9 +5,10 @@ require.config({
     paths: {
         // libs
         backbone: '../lib/backbone',
+        localStorage: '../lib/backbone.localStorage',
         underscore: '../lib/underscore',
         jquery: '../lib/jquery',
-        handlebars: '../lib/handlebars',
+        handlebars: '../lib/handlebars-runtime',
         // app
         Router: 'Router',
         // objects
