@@ -2,6 +2,8 @@
 define(['underscore', 'BaseView'], function (_, BaseView) {
     "use strict";
 
+    var _currentLayout;
+
     return BaseView.extend({
         constructor: function HeaderView() {
             BaseView.prototype.constructor.apply(this, arguments);
@@ -19,6 +21,13 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
 
         },
 
+        render: function () {
+            BaseView.prototype.render.apply(this, arguments);
+            if (_currentLayout) {
+                this.changeCurrent(_currentLayout);
+            }
+        },
+
         events: {
             "click .header__links__item" : "navigationClick"
 
@@ -32,8 +41,16 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
         },
 
         changeCurrent: function (layout) {
-            this.$(".header__links__item").removeClass("header__links__item_current")
-                .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+
+            var $curr = this.$(".header__links__item_" + layout.id);
+            if ($curr.length) {
+                _currentLayout = layout;
+                this.$(".header__links__item").removeClass("header__links__item_current")
+                    .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+            }
+
+
+
         }
     });
 });

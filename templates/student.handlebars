@@ -1,5 +1,29 @@
 <div class="student">
-    <div class="student__name">{{name}}</div>
-    <div class="student__about">{{about}}</div>
+    <h2 class="header-title">Карточка студента</h2>
+    <div class="student-card">
+        <div class="student-card_photo">
+            <img alt="{{firstName}} {{lastName}}" src="{{userpic}}" height="400">
+        </div>
+        <div class="student-card_info">
+            <div class="student-card_name-wrapper">
+                <span class="student-card_name">{{firstName}}&nbsp;{{lastName}}</span>
+                <span class="student-card_hint">из города</span>
+                <span class="student-card_city">{{city}}</span>
+                <ul class="student-card_socials">
+                    {{#each links}}
+                        <li class="student-card_socials__item">
+                            <a class="student-card_socials__item_link student-card_socials__item_link_{{@key}}"
+                               title="{{@key}}" href="{{this}}"></a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="student-card_about">
+                {{about}}
+            </div>
+            <div class="student-card_favourite-lectures">
 
+            </div>
+        </div>
+    </div>
 </div>

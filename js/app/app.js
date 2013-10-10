@@ -8,7 +8,7 @@ requirejs(['backbone', 'jquery', 'underscore',
         var appState = new AppState();
         var router = new Router(appState, ViewFactory);
 
-        appState.getStudents().save();
+        /*appState.getStudents().save();*/
 
 
     }

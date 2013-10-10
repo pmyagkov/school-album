@@ -1,6 +1,7 @@
 
 @import "lib/normalize.css";
 @import "students.css";
+@import "student.css";
 @import "reset.css";
 
 @media (min-width: 960px) {
@@ -27,25 +28,25 @@ body {
 
 .header {
     text-align: center;
-    overflow: hidden;
     height: 50px;
     line-height: 50px;
     background: #F2F2F2;
     border-radius: 0 0 10px 10px;
     border: 1px silver solid;
     border-top: 0;
+}
 
+.header__title {
+    text-align: center;
 }
 
 .header__title,
 .students-title {
     font-weight: 600;
     font-family: 'PT Sans Caption', sans-serif;
-    text-align: left;
 }
 .header__title-link {
     border: 0;
-    padding: 0 0 0 10px;
     color: #606060;
 }
 .header__title-link__first-letter {
@@ -103,6 +104,6 @@ body {
 }
 
 .header__links__item_current {
-    border-bottom-style: solid;
-    font-weight: bold;
+    border-bottom: 3px red solid;
+    height: 48px;
 }

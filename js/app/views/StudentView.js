@@ -3,7 +3,7 @@ define(['BaseView'], function (BaseView) {
     "use strict";
 
     return BaseView.extend({
-        constructor: function StudentsView() {
+        constructor: function StudentView() {
             BaseView.prototype.constructor.apply(this, arguments);
         },
         initialize: function () {

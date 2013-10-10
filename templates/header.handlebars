@@ -3,12 +3,12 @@
         <span class="header__title-link__first-letter">В</span>ыпускной альбом ШРИ
     </a>
 </h1>
-<ul class="header__links">
+<div class="header__links">
     {{#each .}}
         {{#if title}}
-            <li class="header__links__item header__links__item_{{id}}">
+            <div class="header__links__item header__links__item_{{id}}">
                 <a class="header__links__item_link" href="#{{route}}">{{title}}</a>
-            </li>
+            </div>
         {{/if}}
     {{/each}}
-</ul>
+</div>
