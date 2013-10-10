@@ -1,0 +1,17 @@
+<div class="students">
+    <h2 class="header-title">В этом году в школе учились:</h2>
+    <ul class="student-list">
+        {{#each .}}
+            <li class="student-list__item">
+                <span class="student-list__item__userpic" style="background-image: url({{userpic}});">
+
+                </span>
+
+                <span class="student-list__item__name">
+                    <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
+                </span>
+
+            </li>
+        {{/each}}
+    </ul>
+</div>

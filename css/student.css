@@ -1,0 +1,42 @@
+.student-card_photo,
+.student-card_info {
+    float: left;
+}
+
+.student-card_photo {
+    margin: 0 20px 0 0;
+}
+
+.student-card_name-wrapper {
+    line-height: 13px;
+    margin: 0 0 20px 0;
+}
+
+.student-card_socials {
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+
+.student-card_socials__item {
+    float: left;
+    margin: 0 7px 0 0;
+    /*width: 20px;
+    height: 20px;*/
+}
+
+.student-card_socials__item_link_vk::after {
+    content: 'vk';
+}
+
+.student-card_socials__item_link_facebook::after {
+    content: 'facebook';
+}
+
+.student-card_socials__item_link_github::after {
+    content: 'github';
+}
+
+.student-card_socials__item_link_ya::after {
+    content: 'ya';
+}
+
