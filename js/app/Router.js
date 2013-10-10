@@ -1,18 +1,56 @@
 /* global define*/
 
-define(['backbone', 'underscore', 'ViewFactory', 'HeaderView'],
-    function (Backbone, _, ViewFactory, HeaderView) {
+define(['backbone', 'underscore', 'jquery'],
+    function (Backbone, _, $) {
     "use strict";
 
     var _appState;
+    var _viewFactory;
 
     return Backbone.Router.extend({
-        processRoute: function () {
 
-            var args = Array.prototype.slice.call(arguments);
-            var layoutName = arguments[0];
+        initialize: function (appState, viewFactory) {
+            console.info("Router.initialize started");
 
-            if (_appState.getCurrentLayout() === layoutName) {
+
+            var self = this;
+
+            _appState = appState;
+            _viewFactory = viewFactory;
+
+            _appState.getLayouts().each(function (e) {
+                var routeCallback = function () {
+                    return self.processRoute.apply(self, [e.id].concat(Array.prototype.slice.call(arguments)));
+                };
+
+                self.route(e.get("route"), e.id, routeCallback);
+                if (e.get("isDefault")) {
+                    self.route("", "default", routeCallback);
+                }
+            });
+
+            this.startHistory();
+
+            console.info("Router.initialize finished");
+        },
+
+        startHistory: function () {
+            console.info("Router.startHistory started");
+            // this is because of IE hash navigation is based on iframe
+            if (!Backbone.History.started) {
+                $(function () {
+                    Backbone.history.start();
+                });
+            }
+            console.info("Router.startHistory finished");
+        },
+
+        processRoute: function (layoutName) {
+            console.log("Router.processRoute started");
+
+            var self = this;
+
+            if (_appState.isCurrentLayout(layoutName)) {
                 console.log("Don't need to change state.");
             }
             else {
@@ -38,7 +76,7 @@ define(['backbone', 'underscore', 'ViewFactory', 'HeaderView'],
 
                 // we need to clean all the layout first
                 _.each(viewsToClean, function (e, i) {
-                    e.clean();
+                    e.destroy();
                     // remove cleaned view from rendered list
                     renderedViews = _.reject(renderedViews, function (r, i) {
                         return r.cid === e.cid;
@@ -50,16 +88,16 @@ define(['backbone', 'underscore', 'ViewFactory', 'HeaderView'],
 
                 _.each(viewsToRender, function (e, i) {
                     try {
-                        var view = ViewFactory.createView(e.id, e.el, _appState, args.slice(1));
+                        var view = _viewFactory.createView(e.id, e.el, _appState, Array.prototype.slice.call(arguments, 1));
                         currentViews.push(view);
+                        view.on("navigate", function (fragment) {
+                            self.navigate(fragment, {trigger: true});
+                        });
                     }
                     catch (exc) {
-                        console.error("Can't create view '" + e + "'! " + exc);
+                        console.error("Can't create view '" + e.id + "'! " + exc);
                     }
                 });
-
-                _appState.setCurrentViews(renderedViews.concat(currentViews));
-                _appState.setCurrentLayout(layoutName);
 
                 jQuery(function() {
                     _.each(currentViews, function (e, i) {
@@ -67,28 +105,11 @@ define(['backbone', 'underscore', 'ViewFactory', 'HeaderView'],
                     });
                 });
 
+                _appState.setCurrentViews(renderedViews.concat(currentViews));
+                _appState.setCurrentLayout(layoutName);
 
+                console.log("Router.processRoute finished");
             }
-        },
-
-        initialize: function (appState) {
-            var self = this;
-
-            _appState = appState;
-
-            _appState.getLayouts().each(function (e) {
-                var routeCallback = function () {
-                    return self.processRoute.apply(self, [e.id].concat(Array.prototype.slice.call(arguments)));
-                };
-
-                self.route(e.get("route"), e.id, routeCallback);
-                if (e.get("isDefault")) {
-                    self.route("", "default", routeCallback);
-                }
-            });
-
-            Backbone.history.start();
-
         }
     });
 });

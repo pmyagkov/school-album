@@ -4,7 +4,7 @@ define(function () {
 
     return [
         {
-            id: "main", route: "!/main", title: "Главная",
+            id: "main", route: "!/main", title: "О школе",
             views: [{id: "header", el: ".header"}, {id: "about", el: ".content"}],
             isDefault: true
         },

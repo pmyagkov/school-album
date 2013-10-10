@@ -1,5 +1,5 @@
 /* global require */
-require.config({
+requirejs.config({
     deps: ['app'],
     baseUrl: 'js/app',
     paths: {

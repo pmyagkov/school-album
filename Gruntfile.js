@@ -10,12 +10,13 @@
         grunt.initConfig({
             jasmine: {
                 test: {
-                    src: ['js/models/*.js'],
+                    src: ['js/app/Router.js', 'js/app/Utils.js'],
                     options: {
-                        specs: 'js/specs/*Spec.js',
+                        keepRunner: true,
+                        specs: ['js/specs/*Spec.js'],
                         template: require('grunt-template-jasmine-requirejs'),
                         templateOptions: {
-                            requireConfigFile: 'js/config.js'
+                            requireConfigFile: ['js/app/config.js', 'js/specs/testConfig.js']
                         }
                     }
                 }
@@ -35,7 +36,7 @@
                 port: 35729,
                 liveReload: {},
                 proxy: {
-                    host: "localhost",
+                    host: 'localhost',
                     port: 1111
                 }
             },
@@ -46,8 +47,12 @@
                     tasks: ['handlebars:compile']
                 },
                 jasmine: {
-                    files: ['js/specs/*.js', 'js/app/*.js', 'js/collections/*.js', 'js/models/*.js', 'js/views/*.js'],
+                    files: ['js/testConfig.js', 'js/specs/*Spec.js', 'js/app/*.js', 'js/collections/*.js', 'js/models/*.js', 'js/views/*.js'],
                     tasks: ['jasmine:test']
+                },
+                grunt: {
+                    files: ['Gruntfile.js'],
+                    tasks: ['default']
                 }
             },
 

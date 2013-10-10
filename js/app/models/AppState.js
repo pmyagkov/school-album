@@ -33,6 +33,10 @@ define([
             return _currentLayout;
         },
 
+        isCurrentLayout: function (layoutName) {
+            return _currentLayout === layoutName;
+        },
+
         setCurrentLayout: function (value) {
             _currentLayout = value;
             _layouts.setCurrent(value);

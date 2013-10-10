@@ -1,6 +1,6 @@
 /* global require, describe, it, expect */
 
-require(['Utils'], function (Utils) {
+define(['Utils'], function (Utils) {
     "use strict";
 
     describe("Utils", function () {

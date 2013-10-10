@@ -16,6 +16,8 @@ define(['backbone', 'underscore', 'Utils', 'templates'], function (Backbone, _, 
             }
 
             this.template = this.constructor.template;
+
+            /*_.extend(this, Backbone.Events);*/
         },
 
         render: function () {
@@ -46,7 +48,15 @@ define(['backbone', 'underscore', 'Utils', 'templates'], function (Backbone, _, 
 
         clean: function () {
             this.$el.empty();
+        },
+
+        destroy: function () {
+            this.clean();
+            this.$el.off();
+            this.off();
         }
+
+
 
     });
 });

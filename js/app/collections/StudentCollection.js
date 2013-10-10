@@ -1,4 +1,4 @@
-/*global define*/
+/* global define */
 
 define(['backbone', 'localStorage', 'StudentModel'], function (Backbone, localStorage, StudentModel) {
     "use strict";
