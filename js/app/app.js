@@ -1,8 +1,8 @@
 /* global require */
 
 requirejs(['backbone', 'jquery', 'underscore',
-    'Router', 'events', 'AppState', 'ViewFactory'],
-    function (Backbone, $, _, Router, events, AppState, ViewFactory) {
+    'Router', 'events', 'AppState', 'ViewFactory', 'Utils', 'dataObj'],
+    function (Backbone, $, _, Router, events, AppState, ViewFactory, Utils, dataObj) {
         "use strict";
 
         var appState = new AppState();

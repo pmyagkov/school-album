@@ -3,7 +3,12 @@
 define(['backbone'], function (Backbone) {
     "use strict";
 
-    return Backbone.Model.extend({
+    var parent = Backbone.Model;
+
+    return parent.extend({
+        constructor: function StudentModel() {
+            parent.apply(this, arguments);
+        }
 
     });
 });

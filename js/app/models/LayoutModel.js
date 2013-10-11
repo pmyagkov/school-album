@@ -3,7 +3,12 @@
 define(['backbone', 'underscore'], function (Backbone, _) {
     "use strict";
 
-    return Backbone.Model.extend({
+    var parent = Backbone.Model;
+
+    return parent.extend({
+        constructor: function LayoutModel() {
+            parent.apply(this, arguments);
+        },
         initialize: function () {
 
         },

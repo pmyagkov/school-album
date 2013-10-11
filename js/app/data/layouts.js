@@ -4,7 +4,7 @@ define(function () {
 
     return [
         {
-            id: "main", route: "!/main", title: "О школе",
+            id: "about", route: "!/about", title: "О школе",
             views: [{id: "header", el: ".header"}, {id: "about", el: ".content"}],
             isDefault: true
         },
@@ -23,6 +23,10 @@ define(function () {
         {
             id: "lecture", route: "!/lectures/:i",
             views: [{id: "header", el: ".header"}, {id: "lecture", el: ".content"}]
+        },
+        {
+            id: "lecturers", route: "!/lecturers",
+            views: [{id: "header", el: ".header"}, {id: "lecturers", el: ".content"}]
         },
         {
             id: "lecturer", route: "!/lecturers/:i",

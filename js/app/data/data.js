@@ -34,20 +34,39 @@ define(function () {
             {"firstName": "Василий", "lastName": "Стяжкин", "city": "Москва", "about": "Приветствую.\nМне 23 года, около 20-ти из которых я провел примерно здесь .\n\"Hello World!\" написал сам того не зная еще на ZX Spectrum, но гик из меня не получился (и я, признаться, этому рад). \nУчился в Архангельском Музыкальном Училище на джаззовом отделении. Травма руки это исправила. Спустя некоторое время решил просвещаться в IT. Поработал в тех-поддержке провайдера (привет Уральский). Потратив много свободного времени на освоение html/css, убежал в обслуживание интернет магазинов, где исправлял кучу кода, который никогда не должен был рождаться, отбил сотни глупых желаний заказчиков. Стало очевидно - я не хочу пополнять ряды \"веб-дестроеров\" (привет с YaC'a)\nО Школе узнал в процессе поиска обучающих материалов. Через пару месяцев после переезда из Спб в Москву узнал, что в этом году я прибыл в нужное место.\nСпасибо за возможность реализовать свои планы и указание верного направления.", "id": 27, "userpic": "http://img-fotki.yandex.ru/get/5000/224875572.0/0_d576d_79049da1_L", "links": {"github": "https://github.com/vasyan", "ya": "http://vasilyator9000.ya.ru/"}}
         ],
         lectures: [
-            {
-                id: 1,
-                title: "Лекция 1",
-                description: "Описание лекции 1",
-                video: "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802",
-                lecturerId: 1
-            }
+            {"id": 35, "lecturerId": 188, "video": "http://video.yandex.ru/iframe/ya-events/nvby8zm0d8.3121/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26263503", "title": "Изучение и редактирование кода", "dateString": "10 Sep, 2013"},
+            {"id": 36, "lecturerId": 191, "video": "http://video.yandex.ru/iframe/ya-events/gmhj6jhjbq.7339/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26497344", "title": "Развертывание верстки", "dateString": "14 Sep, 2013"},
+            {"id": 37, "lecturerId": 181, "video": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26497696", "title": "Http-протокол", "dateString": "14 Sep, 2013"},
+            {"id": 38, "lecturerId": 184, "video": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": null, "title": "Механизм работы браузера", "dateString": "17 Sep, 2013"},
+            {"id": 39, "lecturerId": 187, "video": "http://video.yandex.ru/iframe/ya-events/0tk8ubi12b.7216/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26501207", "title": "Кеширование на клиенте и сервере", "dateString": "19 Sep, 2013"},
+            {"id": 40, "lecturerId": 194, "video": "http://video.yandex.ru/iframe/ya-events/4fcm2v836x.2020/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26501715", "title": "Безопасность веб-приложений", "dateString": "21 Sep, 2013"},
+            {"id": 41, "lecturerId": 181, "video": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26502148", "title": "Регулярные выражения", "dateString": "21 Sep, 2013"},
+            {"id": 42, "lecturerId": 183, "video": "http://video.yandex.ru/iframe/ya-events/yc39l9dh0a.4723/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26263542", "title": "Командная строка Unix", "dateString": "10 Sep, 2013"},
+            {"id": 43, "lecturerId": 185, "video": null, "slides": "http://www.slideshare.net/slideshow/embed_code/26503527", "title": "Архитектура веб-сервисов", "dateString": "17 Sep, 2013"},
+            {"id": 44, "lecturerId": 185, "video": "http://video.yandex.ru/iframe/ya-events/uery0fxkg2.7247/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26501860", "title": "Языки программирования", "dateString": "21 Sep, 2013"},
+            {"id": 45, "lecturerId": 189, "video": "http://video.yandex.ru/iframe/ya-events/u7neb4ukb7.4729/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26495249", "title": "Тестирование", "dateString": "14 Sep, 2013"},
+            {"id": 46, "lecturerId": 192, "video": "http://video.yandex.ru/iframe/ya-events/oeunffeksq.5100/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": null, "title": "Cистемы контроля версий", "dateString": "12 Sep, 2013"},
+            {"id": 47, "lecturerId": 193, "video": "http://video.yandex.ru/iframe/ya-events/mifh2zd4xw.7143/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26263370", "title": "Вики-синтаксис", "dateString": "7 Sep, 2013"},
+            {"id": 48, "lecturerId": 193, "video": "http://video.yandex.ru/iframe/ya-events/hlgkkpcf67.3822/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": null, "title": "Документирование информации", "dateString": "7 Sep, 2013"},
+            {"id": 49, "lecturerId": 190, "video": "http://video.yandex.ru/iframe/ya-events/u7myq83g9q.4811/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26263573", "title": "Общий цикл разработки (dev-cycle)", "dateString": "7 Sep, 2013"},
+            {"id": 50, "lecturerId": 182, "video": "http://video.yandex.ru/iframe/ya-events/r29oly6fy4.4720/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": "http://www.slideshare.net/slideshow/embed_code/26263315", "title": "Вводная по ШРИ", "dateString": "7 Sep, 2013"},
+            {"id": 51, "lecturerId": 186, "video": "http://video.yandex.ru/iframe/ya-events/vnsrv1de6g.4103/?player-type=custom&show-info=false&show-logo=false&hd=1", "slides": null, "title": "История успеха выпускников ШРИ", "dateString": "7 Sep, 2013"}
         ],
         lecturers: [
-            {
-                id: 1,
-                name: "Лектор 1",
-                about: "Что-то о лекторе 1"
-            }
+            {"id": 181, "about": "До Яндекса занимался разработкой браузерной MMORPG. С 2011 года работает над интерфейсом Яндекс.Директа.", "nativeId": 47352, "userpic": "http://avatars.yandex.net/get-yaevents/e39d3fcaea981cf918bf9f337e56feee/365x365", "firstName": "Алексей", "lastName": "Бережной"},
+            {"id": 182, "about": null, "nativeId": 143134, "userpic": "http://avatars.yandex.net/get-yaevents/300cb1b51bfadaca152a75491c232b92/365x365", "firstName": "Анна", "lastName": "Чеботкевич", sex: true},
+            {"id": 183, "about": null, "nativeId": 310, "userpic": "http://avatars.yandex.net/get-yaevents/a679b4725fe296178cc47bc3804c0b6e/365x365", "firstName": "Виктор", "lastName": "Ашик"},
+            {"id": 184, "about": "Веб-разработчик. В Яндексе занимается ускорением фронтенда Поиска.", "nativeId": 46216, "userpic": "http://avatars.yandex.net/get-yaevents/9c6a228a5196ef3cb1c73c9e06ab24b2/365x365", "firstName": "Георгий", "lastName": "Мостоловица"},
+            {"id": 185, "about": "Верстальщик, разработчик веб-интерфейсов, автор подкаста о веб-разработке «Сделайте мне красиво!».", "nativeId": 434, "userpic": "http://avatars.yandex.net/get-yaevents/f42b324b24dbce848d1510fc3a304e89/365x365", "firstName": "Денис", "lastName": "Бугарчев"},
+            {"id": 186, "about": null, "nativeId": 144389, "userpic": "http://avatars.yandex.net/get-yaevents/cf731f3868db81beb9414444926e328b/365x365", "firstName": "Дмитрий", "lastName": "Поляков"},
+            {"id": 187, "about": null, "nativeId": 151056, "userpic": "http://avatars.yandex.net/get-yaevents/b42044e74a6cfefb5db858e42956f721/365x365", "firstName": "Евгений", "lastName": "Дорошенко"},
+            {"id": 188, "about": "Разработчик интерфейсов", "nativeId": 60778, "userpic": "http://avatars.yandex.net/get-yaevents/8dd92a1999fbe06e3767f633dc406c07/365x365", "firstName": "Игорь", "lastName": "Новак"},
+            {"id": 189, "about": "Занимается тестированием уже девять лет. В Яндексе с 2007 года. Последний год работает в группе производительности интерфейсов.", "nativeId": 45533, "userpic": "http://avatars.yandex.net/get-yaevents/384a444b0f7aecea2d967791365b2bc9/365x365", "firstName": "Марина", "lastName": "Широчкина", sex: true},
+            {"id": 190, "about": null, "nativeId": 144433, "userpic": "http://avatars.yandex.net/get-yaevents/9dc5433ef8399aaba298434c14c0792f/365x365", "firstName": "Михаил", "lastName": "Трошев"},
+            {"id": 191, "about": "Работает в департаменте эксплуатации Яндекса с 2005 года. С 2010 года —руководитель группы администрирования коммуникационных, контент- и внутренних сервисов.", "nativeId": 25, "userpic": "http://avatars.yandex.net/get-yaevents/ad0b99c52e0084b10b4c21dda9aa080b/365x365", "firstName": "Роман", "lastName": "Андриади"},
+            {"id": 192, "about": "Профессионально занимается разработкой уже более 10 лет, из них 5 в Яндексе.", "nativeId": 380, "userpic": "http://avatars.yandex.net/get-yaevents/fe9e1c73b45ae87cfb8ed1bf30fec679/365x365", "firstName": "Сергей", "lastName": "Сергеев"},
+            {"id": 193, "about": null, "nativeId": 144481, "userpic": "http://avatars.yandex.net/get-yaevents/e4136deea69b5bed89ed08615435d7b2/365x365", "firstName": "Сергей", "lastName": "Черкасов"},
+            {"id": 194, "about": "Администратор информационной безопасности в Яндексе. Специалист по информационной безопасности, проповедник свободного программного обеспечения, участник проектов w3af и OWASP.", "nativeId": 20, "userpic": "http://avatars.yandex.net/get-yaevents/5e276342723793120da28e22e51047ae/365x365", "firstName": "Тарас", "lastName": "Иващенко"}
         ]
     };
 });

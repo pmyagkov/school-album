@@ -1,6 +1,6 @@
 /* global define */
 
-define(['backbone', 'underscore', 'Utils', 'templates'], function (Backbone, _, Utils, templates) {
+define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Backbone, _, Utils, templates, Handlebars) {
     "use strict";
 
     return Backbone.View.extend({

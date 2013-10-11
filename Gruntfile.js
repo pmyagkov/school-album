@@ -70,6 +70,12 @@
                             return parts[parts.length - 1].split('.')[0];
                         }
                     }
+                },
+                compilerOptions: {
+                    knownHelpers: {
+                        "js/app/helpers/handlebarsHelper": true
+                    },
+                    knownHelpersOnly: false
                 }
 
             }
@@ -80,11 +86,11 @@
         grunt.loadNpmTasks('grunt-contrib-jasmine');
         grunt.loadNpmTasks('grunt-contrib-connect');
         grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.loadNpmTasks('grunt-reload');
+        /*grunt.loadNpmTasks('grunt-reload');*/
         grunt.loadNpmTasks('grunt-contrib-handlebars');
 
         // Default task(s).
-        grunt.registerTask('default', ['handlebars:compile', 'jasmine:test', 'connect', 'reload', 'watch']);
+        grunt.registerTask('default', ['handlebars:compile', 'jasmine:test', 'connect', 'watch']);
 
     };
 

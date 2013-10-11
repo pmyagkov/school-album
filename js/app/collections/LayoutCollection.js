@@ -1,9 +1,13 @@
 /*global define*/
 
-define(['backbone', 'LayoutModel'], function (Backbone, LayoutModel) {
+define(['backbone', 'localStorage', 'LayoutModel'], function (Backbone, localStorage, LayoutModel) {
     "use strict";
 
-    return Backbone.Collection.extend({
+    var parent = Backbone.Collection;
+    return parent.extend({
+        constructor: function LayoutCollection() {
+            parent.apply(this, arguments);
+        },
         model: LayoutModel,
         initialize: function () {
 
@@ -18,6 +22,8 @@ define(['backbone', 'LayoutModel'], function (Backbone, LayoutModel) {
                     currentLayout = e;
                 }
             });
-        }
+        },
+
+        localStorage: new Backbone.LocalStorage("LayoutCollection")
     });
 });

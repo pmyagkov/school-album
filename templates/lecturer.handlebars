@@ -1,0 +1,37 @@
+<div class="lecturer">
+    <div class="lecturer__info">
+        <h2 class="lecturer__info_name">
+            {{firstName}}&nbsp;{{lastName}}
+            {{#if nativeId}}
+                <a class="lecturer__info_tech-link" target="_blank" href="http://tech.yandex.ru/people/{{nativeId}}" title="Профиль на tech.yandex.ru"><i class="icon-ya"></i></a>
+            {{/if}}
+        </h2>
+
+        {{#if about}}
+            <div class="caption caption_v">
+                О себе:
+            </div>
+            <div class="lecturer__info_about">
+                {{about}}
+            </div>
+        {{/if}}
+
+        <div class="lecturer__userpic">
+            <img class="lecturer__userpic_img" src="{{userpic}}" alt="{{firstName}} {{lastName}}">
+        </div>
+
+        <div class="lecturer__lectures">
+            <div class="caption caption_v">Лекции автора:</div>
+            <ul class="lecturer__lectures-list">
+                {{#each lectures}}
+                    <li class="lecturer__lectures-list__item">
+                        <a href="#!/lectures/{{id}}" title="{{title}}">{{title}}</a>
+                    </li>
+                {{/each}}
+
+            </ul>
+        </div>
+
+    </div>
+
+</div>

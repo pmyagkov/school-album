@@ -1,19 +1,24 @@
 
 @import "lib/normalize.css";
-@import "students.css";
+@import "icons.css";
 @import "student.css";
+@import "lecture.css";
+@import "lecturer.css";
 @import "reset.css";
 
-@media (min-width: 960px) {
+@media (min-width: 980px) {
     .page {
         margin: auto;
-        width: 960px;
+        width: 980px;
+    }
+    .header {
+        width: 980px;
     }
 }
 
 body {
     font-family: Arial, sans-serif;
-    color: #606060;
+    color: #303030;
 }
 
 .link {
@@ -34,10 +39,13 @@ body {
     border-radius: 0 0 10px 10px;
     border: 1px silver solid;
     border-top: 0;
+    position: fixed;
+    top: 0;
 }
 
 .header__title {
-    text-align: center;
+    text-align: left;
+    margin: 0 0 0 8px;
 }
 
 .header__title,
@@ -45,10 +53,13 @@ body {
     font-weight: 600;
     font-family: 'PT Sans Caption', sans-serif;
 }
-.header__title-link {
+.header__title-link,
+.header__title-link:hover{
     border: 0;
-    color: #606060;
+    color: black;
+    font-weight: lighter;
 }
+
 .header__title-link__first-letter {
     color: red;
 }
@@ -61,19 +72,15 @@ body {
 
 }
 
-.header-title {
-    font-size: 1.5em;
-}
-
 .header__title,
 .header__links {
     float: left;
-    margin: 0;
     width: 49%;
 }
 
 .header__links {
     border-left: 1px silver solid;
+    text-align: center;
 }
 
 .header__links__item {
@@ -106,4 +113,36 @@ body {
 .header__links__item_current {
     border-bottom: 3px red solid;
     height: 48px;
+}
+
+
+.content {
+    margin: 60px 10px 0 10px;
+}
+
+.caption {
+    color: gray;
+    font-size: 0.8em;
+}
+
+.entity-list {
+    margin: 0 -10px;
+
+}
+
+.entity-list__item {
+    float: left;
+
+    border: 1px silver solid;
+    background: #F2F2F2;
+    margin: 0 10px 10px 10px;
+    padding: 20px;
+}
+
+.entity-list__item_m {
+    width: 43.5%;
+}
+
+.entity-list__item_s {
+    width: 27%;
 }

@@ -1,0 +1,52 @@
+
+
+.lectures-list__item_title {
+    font-size: 1.3em;
+    margin: 0 0 15px 0;
+}
+
+.lectures-list__item_name {
+    margin: 0 0 3px 0;
+}
+
+.lectures-list__item_date {
+    color: black;
+    font-size: 0.9em;
+}
+
+.lecture-list__item_icons {
+    float: right;
+}
+
+.lecture-list__item_icons__item {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 5px;
+}
+
+
+
+.lecture__info_title {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+}
+
+.lecture__lecturer {
+    margin: 0 0 10px 0;
+}
+
+.lecture__info {
+    float: left;
+    margin: 0 0 20px 0;
+}
+
+.lecture__userpic_img {
+    height: 270px;
+}
+
+.lecture__slides {
+    float: right;
+    width: 400px;
+    height: 338px;
+    margin: 0 0 20px 0;
+}
