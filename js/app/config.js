@@ -17,19 +17,26 @@ requirejs.config({
         dataObj: 'data/data',
         // utils
         Utils: 'Utils',
+        helpers: 'helpers/handlebarsHelpers',
         // models
         AppState: 'models/AppState',
         AboutModel: 'models/AboutModel',
         LayoutModel: 'models/LayoutModel',
         StudentModel: 'models/StudentModel',
+        LectureModel: 'models/LectureModel',
+        LecturerModel: 'models/LecturerModel',
         // collections
         LayoutCollection: 'collections/LayoutCollection',
         StudentCollection: 'collections/StudentCollection',
+        LectureCollection: 'collections/LectureCollection',
+        LecturerCollection: 'collections/LecturerCollection',
         // views
         HeaderView: 'views/HeaderView',
         AboutView: 'views/AboutView',
         StudentView: 'views/StudentView',
         StudentsView: 'views/StudentsView',
+        LectureView: 'views/LectureView',
+        LecturesView: 'views/LecturesView',
         BaseView: 'views/BaseView',
         ViewFactory: 'views/ViewFactory',
         //templates

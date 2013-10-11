@@ -1,4 +1,4 @@
-/* global define, require, describe, it, expect */
+ /* global define, require, describe, it, expect */
 
 define(['sinon', 'backbone', 'Router', 'AppState', 'LayoutCollection', 'StudentModel', 'StudentView', 'HeaderView', 'AboutModel', 'AboutView', 'ViewFactory'],
     function (sinon, Backbone, Router, AppState, LayoutCollection, StudentModel, StudentView, HeaderView, AboutModel, AboutView, ViewFactory) {

@@ -52,6 +52,45 @@ define(['underscore'], function (_) {
             return students;
         },
 
+        convertLectures: function (lectures) {
+
+            _.each(lectures, function (e) {
+                e.lecturerId = e.lector_id;
+                delete e.lector_id;
+                delete e.native_id;
+
+                e.video = e.video_url;
+                delete e.video_url;
+
+                e.slides = e.slides_url;
+                delete e.slides_url;
+
+                e.title = e.name;
+                delete e.name;
+            });
+
+            return lectures;
+        },
+
+        convertLecturers: function (lecturers) {
+            _.each(lecturers, function (e) {
+                e.nativeId = e.native_id;
+                delete e.native_id;
+
+                e.userpic = e.photo_url;
+                delete e.photo_url;
+
+                var parts = e.name.split(' ');
+                e.firstName = parts[0];
+                e.lastName = parts[1];
+                delete e.name;
+
+                delete e.all_lectures;
+            });
+
+            return lecturers;
+        },
+
         toHtmlCase: function (str) {
 
             function convert(match) {

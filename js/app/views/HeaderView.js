@@ -2,11 +2,13 @@
 define(['underscore', 'BaseView'], function (_, BaseView) {
     "use strict";
 
-    var _currentLayout;
+
 
     return BaseView.extend({
         constructor: function HeaderView() {
             BaseView.prototype.constructor.apply(this, arguments);
+            this._wasRendered = false;
+            this._currentLayout = "";
         },
 
         initialize: function() {
@@ -22,9 +24,11 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
         },
 
         render: function () {
+            this._wasRendered = true;
+
             BaseView.prototype.render.apply(this, arguments);
-            if (_currentLayout) {
-                this.changeCurrent(_currentLayout);
+            if (this._currentLayout) {
+                this.changeCurrent(this._currentLayout);
             }
         },
 
@@ -42,15 +46,17 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
 
         changeCurrent: function (layout) {
 
-            var $curr = this.$(".header__links__item_" + layout.id);
-            if ($curr.length) {
-                _currentLayout = layout;
-                this.$(".header__links__item").removeClass("header__links__item_current")
-                    .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+            if (!this._wasRendered) {
+                this._currentLayout = layout;
             }
-
-
-
+            else {
+                var $curr = this.$(".header__links__item_" + layout.id);
+                if ($curr.length) {
+                    this._currentLayout = layout;
+                    this.$(".header__links__item").removeClass("header__links__item_current")
+                        .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+                }
+            }
         }
     });
 });

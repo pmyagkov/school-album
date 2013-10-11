@@ -1,6 +1,11 @@
 /* global define */
-define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView'],
-    function (HeaderView, AboutView, StudentView, StudentsView) {
+define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
+        'LectureView', 'LecturesView'
+
+],
+    function (HeaderView, AboutView, StudentView, StudentsView,
+              LectureView, LecturesView
+        ) {
         "use strict";
 
         return {
@@ -15,10 +20,6 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView'],
                         view = new AboutView({model: appState.getAbout(), el: el});
                         break;
 
-                    case "students":
-                        view = new StudentsView({model: appState.getStudents(), el: el});
-                        break;
-
                     case "student":
                         if (!params.length) {
                             throw new Error("Index of the student is not passed to ViewFactory to construct 'student' view");
@@ -30,6 +31,28 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView'],
                         }
 
                         view = new StudentView({model: student, el: ".content"});
+                        break;
+
+                    case "students":
+                        view = new StudentsView({model: appState.getStudents(), el: el});
+                        break;
+
+
+                    case "lecture":
+                        if (!params.length) {
+                            throw new Error("Index of the student is not passed to ViewFactory to construct 'student' view");
+                        }
+
+                        var lecture = appState.getLecture(params[0]);
+                        if (typeof lecture === "undefined") {
+                            throw new Error("A lecture with id '" + params[0] + "' doesn't exist in the collection");
+                        }
+
+                        view = new LectureView({model: lecture, el: el});
+                        break;
+
+                    case "lectures":
+                        view = new LecturesView({model: appState.getLectures(), el: el});
                         break;
 
 
