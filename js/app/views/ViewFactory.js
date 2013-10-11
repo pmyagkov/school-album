@@ -32,7 +32,7 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
                             throw new Error("A student with id '" + params[0] + "' doesn't exist in the collection");
                         }
 
-                        view = new StudentView({model: student, el: ".content"});
+                        view = new StudentView({model: student, el: ".content", command: params[1]});
                         break;
 
                     case "students":

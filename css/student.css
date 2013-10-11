@@ -45,14 +45,40 @@
     border: 0;
 }
 
-.student-card_photo,
+.student_edit-icon,
+.student-edit_link-save {
+    margin: 0 0 0 10px;
+}
+
+
 .student-card_info {
     float: left;
+    width: 630px;
 }
 
 .student-card_photo {
+    position: relative;
     margin: 0 20px 0 0;
     float: right;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.student-card_photo_shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.student-card_photo,
+.student-card_photo_shadow {
+    height: 300px;
+    background-size: cover;
+    background-position: 50%;
+    width: 300px;
+    height: 300px;
 }
 
 .student-card_name-wrapper {
@@ -69,6 +95,24 @@
     margin: 0 0 0 20px;
 }
 
+.student-card_socials_edit {
+    margin: 0;
+    display: block;
+}
+.student-card_socials-list_edit {
+    margin: 0 0 20px 0;
+}
+
+.student-card_socials-list__item_edit input {
+    margin: 0 10px 0 0;
+}
+
+.student-card_socials-list__item_edit {
+    margin: 10px 0;
+
+}
+
+
 .student-card_socials__item {
     float: left;
     margin: 0 7px 0 0;
@@ -76,6 +120,40 @@
     height: 20px;*/
 }
 
+.student-card_socials-list__item_control {
+    width: 360px;
+    font-size: 0.9em;
+}
+
+.student-card_userpic {
+    margin: 0 0 20px 0;
+}
+
+.student-card_about-control {
+    font-size: 0.9em;
+    width: 600px;
+    height: 200px;
+}
+
 .student-card_socials__item_link {
     border: 0;
 }
+
+.control-wrapper {
+    display: inline-block;
+}
+.control-wrapper input {
+    display: block;
+}
+
+label.error {
+    color: #ff3a3f;
+    font-size: 0.8em;
+    float: left;
+    margin: 2px 0 0 0;
+}
+
+.student-card_userpic-control {
+    width: 600px;
+}
+

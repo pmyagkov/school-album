@@ -8,6 +8,7 @@ requirejs.config({
         localStorage: '../lib/backbone.localStorage',
         underscore: '../lib/underscore',
         jquery: '../lib/jquery',
+        "jquery.validate": '../lib/jquery.validate',
         handlebars: '../lib/handlebars-runtime',
         // app
         Router: 'Router',
@@ -26,6 +27,7 @@ requirejs.config({
         LectureModel: 'models/LectureModel',
         LecturerModel: 'models/LecturerModel',
         // collections
+        BaseCollection: 'collections/BaseCollection',
         LayoutCollection: 'collections/LayoutCollection',
         StudentCollection: 'collections/StudentCollection',
         LectureCollection: 'collections/LectureCollection',
@@ -53,6 +55,11 @@ requirejs.config({
             deps: [],
             exports: 'jQuery'
         },
+        "jquery.validate": {
+            deps: ['jquery'],
+            exports: 'jQuery'
+        },
+
         backbone: {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'

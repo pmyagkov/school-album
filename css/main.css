@@ -23,12 +23,16 @@ body {
 
 .link {
     color: #5e5e5e;
-    border-bottom: 1px #5e5e5e dashed;
+    border-bottom: 1px #5e5e5e solid;
 }
 
 .link:hover {
     color: #ff3a3f;
-    border-bottom: 1px #ff3a3f dashed;
+    border-bottom: 1px #ff3a3f solid;
+}
+
+.link_i, .link_i:hover {
+    border: 0;
 }
 
 .header {
