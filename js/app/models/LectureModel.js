@@ -16,9 +16,17 @@ define(['backbone', 'underscore'], function (Backbone, _) {
             this.set("date", new Date(Date.parse(this.get("dateString"))));
         },
 
-        toJSON: function () {
+        toJSON: function (shallow) {
+            var self = this;
+
             var attrs = parent.prototype.toJSON.apply(this, arguments);
-            attrs.lecturer = this._lecturer.toJSON();
+            if (!shallow) {
+                attrs.lecturer = this._lecturer.toJSON();
+                attrs.otherLectures = _(this._lecturer.getLectures()).chain()
+                    .reject(function (e) { return e.id === self.id; })
+                    .map(function (e) { return e.toJSON(true); }).value();
+            }
+
 
             return attrs;
         }

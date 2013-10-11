@@ -51,66 +51,62 @@ define(['backbone', 'underscore', 'jquery'],
                 var self = this;
                 var args = Array.prototype.slice.call(arguments);
 
-                if (_appState.isCurrentLayout(layoutName)) {
-                    console.log("Don't need to change state.");
-                }
-                else {
-                    console.log("State is needed to be changed. New layout: " + layoutName);
+                console.log("State is needed to be changed. New layout: " + layoutName);
 
-                    // I don't need to reinstantiate views again
+                // I don't need to reinstantiate views again
 
-                    var renderedViews = _appState.getCurrentViews();
-                    var viewsToClean = renderedViews.slice();
+                var renderedViews = _appState.getCurrentViews();
+                var viewsToClean = renderedViews.slice();
 
-                    var layoutViews = _appState.getLayout(layoutName).getViews();
-                    var viewsToRender = _.reject(layoutViews, function (e, i) {
-                        return _.any(renderedViews, function (r) {
-                            return r.getId() === e.id && r.getElementSelector() === e.el;
+                var layoutViews = _appState.getLayout(layoutName).getViews();
+                var viewsToRender = _.reject(layoutViews, function (e, i) {
+                    return _.any(renderedViews, function (r) {
+                        return r.getId() === e.id && r.getElementSelector() === e.el;
+                    });
+                });
+
+                viewsToClean = _.reject(renderedViews, function (r, i) {
+                    return _.any(layoutViews, function (e) {
+                        return r.getId() === e.id && r.getElementSelector() === e.el;
+                    });
+                });
+
+                // we need to clean all the layout first
+                _.each(viewsToClean, function (e, i) {
+                    e.destroy();
+                    // remove cleaned view from rendered list
+                    renderedViews = _.reject(renderedViews, function (r, i) {
+                        return r.cid === e.cid;
+                    });
+                });
+
+                var layout, currentViews = [];
+                var layouts = _appState.getLayouts();
+
+                _.each(viewsToRender, function (e, i) {
+                    try {
+                        var view = _viewFactory.createView(e.id, e.el, _appState, args.slice(1));
+                        currentViews.push(view);
+                        view.on("navigate", function (fragment) {
+                            self.navigate(fragment, {trigger: true});
                         });
+                    }
+                    catch (exc) {
+                        console.error("Can't create view '" + e.id + "'! " + exc);
+                    }
+                });
+
+                jQuery(function () {
+                    _.each(currentViews, function (e, i) {
+                        e.render();
                     });
+                });
 
-                    viewsToClean = _.reject(renderedViews, function (r, i) {
-                        return _.any(layoutViews, function (e) {
-                            return r.getId() === e.id && r.getElementSelector() === e.el;
-                        });
-                    });
+                _appState.setCurrentViews(renderedViews.concat(currentViews));
+                _appState.setCurrentLayout(layoutName);
 
-                    // we need to clean all the layout first
-                    _.each(viewsToClean, function (e, i) {
-                        e.destroy();
-                        // remove cleaned view from rendered list
-                        renderedViews = _.reject(renderedViews, function (r, i) {
-                            return r.cid === e.cid;
-                        });
-                    });
+                console.log("Router.processRoute finished");
 
-                    var layout, currentViews = [];
-                    var layouts = _appState.getLayouts();
-
-                    _.each(viewsToRender, function (e, i) {
-                        try {
-                            var view = _viewFactory.createView(e.id, e.el, _appState, args.slice(1));
-                            currentViews.push(view);
-                            view.on("navigate", function (fragment) {
-                                self.navigate(fragment, {trigger: true});
-                            });
-                        }
-                        catch (exc) {
-                            console.error("Can't create view '" + e.id + "'! " + exc);
-                        }
-                    });
-
-                    jQuery(function () {
-                        _.each(currentViews, function (e, i) {
-                            e.render();
-                        });
-                    });
-
-                    _appState.setCurrentViews(renderedViews.concat(currentViews));
-                    _appState.setCurrentLayout(layoutName);
-
-                    console.log("Router.processRoute finished");
-                }
             }
         });
     });

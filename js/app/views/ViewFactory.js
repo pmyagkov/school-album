@@ -1,10 +1,12 @@
 /* global define */
 define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
-        'LectureView', 'LecturesView'
+        'LectureView', 'LecturesView',
+        'LecturerView'
 
 ],
     function (HeaderView, AboutView, StudentView, StudentsView,
-              LectureView, LecturesView
+              LectureView, LecturesView,
+              LecturerView
         ) {
         "use strict";
 
@@ -40,7 +42,7 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
 
                     case "lecture":
                         if (!params.length) {
-                            throw new Error("Index of the student is not passed to ViewFactory to construct 'student' view");
+                            throw new Error("Index of the lecture is not passed to ViewFactory to construct 'lecture' view");
                         }
 
                         var lecture = appState.getLecture(params[0]);
@@ -55,6 +57,18 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
                         view = new LecturesView({model: appState.getLectures(), el: el});
                         break;
 
+                    case "lecturer":
+                        if (!params.length) {
+                            throw new Error("Index of the lecturer is not passed to ViewFactory to construct 'lecturer' view");
+                        }
+
+                        var lecturer = appState.getLecturer(params[0]);
+                        if (typeof lecturer === "undefined") {
+                            throw new Error("A lecturer with id '" + params[0] + "' doesn't exist in the collection");
+                        }
+
+                        view = new LecturerView({model: lecturer, el: el});
+                        break;
 
                     default:
                         throw new Error("Can't find appropriate option to generate a view!");

@@ -56,7 +56,8 @@ body {
 .header__title-link,
 .header__title-link:hover{
     border: 0;
-    color: #606060;
+    color: black;
+    font-weight: lighter;
 }
 
 .header__title-link__first-letter {
@@ -122,4 +123,26 @@ body {
 .caption {
     color: gray;
     font-size: 0.8em;
+}
+
+.entity-list {
+    margin: 0 -10px;
+
+}
+
+.entity-list__item {
+    float: left;
+
+    border: 1px silver solid;
+    background: #F2F2F2;
+    margin: 0 10px 10px 10px;
+    padding: 20px;
+}
+
+.entity-list__item_m {
+    width: 43.5%;
+}
+
+.entity-list__item_s {
+    width: 27%;
 }

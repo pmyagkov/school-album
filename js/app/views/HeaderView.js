@@ -1,8 +1,6 @@
 /* global define */
-define(['underscore', 'BaseView'], function (_, BaseView) {
+define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
     "use strict";
-
-
 
     return BaseView.extend({
         constructor: function HeaderView() {
@@ -27,6 +25,7 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
             this._wasRendered = true;
 
             BaseView.prototype.render.apply(this, arguments);
+
             if (this._currentLayout) {
                 this.changeCurrent(this._currentLayout);
             }
@@ -46,6 +45,7 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
 
         changeCurrent: function (layout) {
 
+            $(document).scrollTop(0);
             if (!this._wasRendered) {
                 this._currentLayout = layout;
             }

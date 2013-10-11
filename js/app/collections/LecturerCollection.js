@@ -12,6 +12,13 @@ define(['backbone', 'localStorage', 'underscore', 'LecturerModel'], function (Ba
         initialize: function () {
 
         },
+
+        addLectures: function (lectures) {
+            this.forEach(function (e) {
+                e.addLectures(lectures.where({lecturerId: e.id}));
+            });
+        },
+
         localStorage: new Backbone.LocalStorage("LecturerCollection")
     });
 });

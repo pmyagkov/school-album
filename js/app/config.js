@@ -37,6 +37,7 @@ requirejs.config({
         StudentsView: 'views/StudentsView',
         LectureView: 'views/LectureView',
         LecturesView: 'views/LecturesView',
+        LecturerView: 'views/LecturerView',
         BaseView: 'views/BaseView',
         ViewFactory: 'views/ViewFactory',
         //templates

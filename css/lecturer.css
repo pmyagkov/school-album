@@ -1,0 +1,23 @@
+.lecturer__userpic {
+    float: right;
+}
+
+.lecturer__lectures-list__item {
+    margin: 0 0 10px 0;
+}
+
+.lecturer__userpic_img {
+    height: 300px;
+}
+
+.lecturer__info_tech-link {
+    border: 0;
+}
+
+.lecturer__info_about {
+    margin: 0 0 20px 0;
+}
+
+.caption_v {
+    margin: 0 0 5px 0;
+}

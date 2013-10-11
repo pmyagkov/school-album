@@ -44,6 +44,7 @@ define([
             lectures: new LectureCollection(dataObj.lectures, {lecturers: lecturers}),
             lecturers: lecturers
         };
+        lecturers.addLectures(_data.lectures);
     };
 
     ctor.prototype = {
