@@ -58,18 +58,18 @@ define(['backbone', 'underscore', 'jquery'],
                 var renderedViews = _appState.getCurrentViews();
                 var viewsToClean = renderedViews.slice();
 
-                var layoutViews = _appState.getLayout(layoutName).getViews();
-                var viewsToRender = _.reject(layoutViews, function (e, i) {
+                var viewsToRender = _appState.getLayout(layoutName).getViews();
+                /*var viewsToRender = _.reject(layoutViews, function (e, i) {
                     return _.any(renderedViews, function (r) {
                         return r.getId() === e.id && r.getElementSelector() === e.el;
                     });
                 });
-
-                viewsToClean = _.reject(renderedViews, function (r, i) {
+*/
+  /*              viewsToClean = _.reject(renderedViews, function (r, i) {
                     return _.any(layoutViews, function (e) {
                         return r.getId() === e.id && r.getElementSelector() === e.el;
                     });
-                });
+                });*/
 
                 // we need to clean all the layout first
                 _.each(viewsToClean, function (e, i) {
