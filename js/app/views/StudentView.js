@@ -37,18 +37,21 @@ define(['BaseView', 'jquery.validate'], function (BaseView, $) {
 
                     var parts = attr.split(".");
                     var currObj = obj;
-                    for (var i = 0; i < parts.length; i++) {
-                        var currPart = parts[i];
-                        if (i < parts.length - 1) {
-                            if (!obj[currPart]) {
-                                obj[currPart] = {};
+                    if ($e.val()) {
+                        for (var i = 0; i < parts.length; i++) {
+                            var currPart = parts[i];
+                            if (i < parts.length - 1) {
+                                if (!obj[currPart]) {
+                                    obj[currPart] = {};
+                                }
+                                currObj = obj[currPart];
                             }
-                            currObj = obj[currPart];
-                        }
-                        else {
-                            currObj[currPart] = $e.val();
+                            else {
+                                currObj[currPart] = $e.val();
+                            }
                         }
                     }
+
                 });
 
                 this.model.save(obj);
