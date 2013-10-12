@@ -1,5 +1,10 @@
 <div class="student">
-    <h2 class="header-title">Карточка студента</h2>
+    <h2 class="header-title">
+        Карточка студента
+        <a class="link link_i" href="#!/students/{{id}}/edit" title="Редактировать карточку">
+            <span class="student_edit-icon"><i class="icon-edit"></i></span>
+        </a>
+    </h2>
     <div class="student-card">
         <div class="student-card_info">
             <div class="student-card_name-wrapper">
@@ -22,12 +27,12 @@
                 {{about}}
 
             </div>
+
             <div class="student-card_favourite-lectures">
-                <img alt="{{firstName}} {{lastName}}" src="{{userpic}}" height="300">
+
             </div>
         </div>
-        <div class="student-card_photo">
-
+        <div class="student-card_photo" style="background-image: url('{{userpic}}')">
         </div>
 
     </div>

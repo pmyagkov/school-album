@@ -5,19 +5,31 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
 
     return Backbone.View.extend({
 
-        initialize: function () {
+        initialize: function (options) {
             if (!this.el) {
                 this.el = arguments.length > 0 ? arguments[0].el : undefined;
             }
 
-            if (!_.isFunction(this.constructor.template)) {
-                var templateName = Utils.toHtmlCase(this.constructor.name);
-                this.constructor.template = templates[templateName.split('-')[0]];
+            var templateName = Utils.extractViewName(this.constructor.name);
+            if (options && options.command) {
+                this._command = options.command;
+                templateName += options.command[0].toUpperCase() + options.command.substr(1);
             }
 
-            this.template = this.constructor.template;
 
-            /*_.extend(this, Backbone.Events);*/
+            // caching of template
+            if (!this.constructor.templates) {
+                this.constructor.templates = [];
+            }
+            var template = this.constructor.templates[this._command || ""];
+            if (_.isFunction(template)) {
+                this.template = template;
+            }
+            else {
+                this.template = templates[templateName];
+                // push new template to the cache
+                this.constructor.templates.push(this.template);
+            }
         },
 
         render: function () {

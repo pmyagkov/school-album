@@ -1,0 +1,80 @@
+<div class="student-edit">
+    <form>
+        <h2 class="header-title">
+            Карточка студента
+            <a class="student-edit_link-save link link_i" href="#" title="Сохранить карточку">
+                <span class=""><i class="icon-save"></i></span>
+            </a>
+            <a class="student-edit_link-discard link link_i" href="#" title="Отменить редактирование">
+                <span class=""><i class="icon-remove"></i></span>
+            </a>
+        </h2>
+        <div class="student-card">
+
+            <div class="student-card_info">
+                <div class="student-card_name-wrapper">
+                    <div class="control-wrapper">
+                        <input type="text" id="firstName" name="firstName" placeholder="Имя" value="{{firstName}}" required>
+                    </div>
+
+                    <div class="control-wrapper">
+                        <input type="text" id="lastName" name="lastName" placeholder="Фамилия" value="{{lastName}}" required>
+                    </div>
+
+                    <span class="caption">из города</span>
+
+                    <div class="control-wrapper">
+                        <input type="text" id="city" name="city" placeholder="Город" value="{{city}}" required>
+                    </div>
+
+
+
+                </div>
+                <div class="student-card_socials student-card_socials_edit">
+                    <div class="caption caption_v">
+                        Ссылки на профили:
+                    </div>
+                    <ul class="student-card_socials-list student-card_socials-list_edit">
+                        <li class="student-card_socials-list__item student-card_socials-list__item_edit">
+                            <input class="student-card_socials-list__item_control" type="text" name="links.vk" placeholder="http://vk.com" value="{{links.vk}}">
+                            <i class="icon-vk"></i>
+                        </li>
+                        <li class="student-card_socials-list__item student-card_socials-list__item_edit">
+                            <input class="student-card_socials-list__item_control" type="text" name="links.facebook" placeholder="http://facebook.com" value="{{links.fb}}">
+                            <i class="icon-facebook"></i>
+                        </li>
+                        <li class="student-card_socials-list__item student-card_socials-list__item_edit">
+                            <input class="student-card_socials-list__item_control" type="text" name="links.github" placeholder="http://github.com" value="{{links.github}}">
+                            <i class="icon-github"></i>
+                        </li>
+                        <li class="student-card_socials-list__item student-card_socials-list__item_edit">
+                            <input class="student-card_socials-list__item_control" type="text" name="links.ya" placeholder="http://ya.ru" value="{{links.ya}}">
+                            <i class="icon-ya"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="student-card_userpic">
+                    <div class="caption caption_v">
+                        Ссылка на фото:
+                    </div>
+                    <div class="student-card_userpic-control-wrapper control-wrapper">
+                        <input class="student-card_userpic-control" type="text" id="userpic" name="userpic" placeholder="" value="{{userpic}}" required>
+                    </div>
+                </div>
+                <div class="student-card_about">
+                    <div class="caption caption_v">О себе:</div>
+                    <textarea name="about" class="student-card_about-control">{{about}}</textarea>
+                </div>
+
+                <div class="student-card_favourite-lectures">
+
+                </div>
+            </div>
+            <div class="student-card_photo" style="background-image: url('{{userpic}}');">
+                <div class="student-card_photo_shadow"></div>
+            </div>
+
+        </div>
+    </form>
+
+</div>

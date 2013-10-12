@@ -27,20 +27,40 @@ define([
 
              layoutsObj,
              dataObj) {
+
     "use strict";
 
     var _currentLayout = "";
     var _currentViews = [];
     var _layouts, _data;
 
+    var fetchCollection = function (collectionCtor, values, options) {
+        var result = new collectionCtor();
+        var localStorageEmpty = false;
+        result.fetch({success: function () {
+            if (!result.length) {
+                localStorageEmpty = true;
+                result.reset(values, _.extend(options ? options : {}, {silent: true}));
+            }
+        }, error: function (e) {
+            console.error(collectionCtor.name + ".fetch failure: ", e);
+        }})
+
+        if (localStorageEmpty) {
+            result.save();
+        }
+
+        return result;
+    };
+
+
     var ctor = function AppState() {
         // information about possible layouts, views, routes, etc.
         _layouts = new LayoutCollection(layoutsObj);
-
         var lecturers = new LecturerCollection(dataObj.lecturers);
         _data = {
             about: new AboutModel(dataObj.about),
-            students: new StudentCollection(dataObj.students),
+            students: fetchCollection(StudentCollection, dataObj.students),
             lectures: new LectureCollection(dataObj.lectures, {lecturers: lecturers}),
             lecturers: lecturers
         };

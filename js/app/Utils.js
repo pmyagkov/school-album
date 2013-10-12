@@ -91,6 +91,14 @@ define(['underscore'], function (_) {
             return lecturers;
         },
 
+        extractViewName: function (str) {
+            var regex = /\w*(?=View)/;
+            var match = regex.exec(str);
+
+            var result = match && match.length ? match[0][0].toLowerCase() + match[0].substr(1) : str;
+            return result;
+        },
+
         toHtmlCase: function (str) {
 
             function convert(match) {

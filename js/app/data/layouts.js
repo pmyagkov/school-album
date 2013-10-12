@@ -13,7 +13,7 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "students", el: ".content"}]
         },
         {
-            id: "student", route: "!/students/:i",
+            id: "student", route: "!/students/:i(/:command)",
             views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}]
         },
         {
