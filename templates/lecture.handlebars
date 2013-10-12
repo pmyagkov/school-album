@@ -1,0 +1,38 @@
+<div class="lecture">
+    <div class="lecture__info">
+        <h2 class="lecture__info_title">
+            {{title}}
+        </h2>
+        <div class="lecture__lecturer">
+            <span class="caption">Лекцию читает&nbsp;</span>
+            <a href="#!/lecturers/{{lecturer.id}}" title="Посмотреть информацию про лектора">{{lecturer.firstName}} {{lecturer.lastName}}</a>
+        </div>
+        {{#if otherLectures.length}}
+            <div class="lecture__others">
+                <div class="caption caption_v">Другие лекции автора:</div>
+                <ul class="lecture__others-list">
+                    {{#each otherLectures}}
+                        <li class="lecture__others-list__item">
+                            <a href="#!/lectures/{{id}}" title="{{title}}">{{title}}</a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+        {{/if}}
+
+    </div>
+
+    {{#if slides}}
+        <iframe class="lecture__slides player" frameborder="0" src="{{slides}}"></iframe>
+    {{/if}}
+
+    {{#if video}}
+        <div class="lecture__video">
+            <div class="lecture__video_presentation">
+                <iframe src="{{video}}" style="width: 100%; height: 320px;"></iframe>
+            </div>
+        </div>
+    {{else}}
+    {{/if}}
+</div>

@@ -1,0 +1,24 @@
+<div class="students">
+    <h2 class="header-title">В этом году в школе учились:</h2>
+    <ul class="entity-list">
+        {{#each .}}
+            <li class="entity-list__item entity-list__item_s">
+                <span class="student-list__item__userpic" style="background-image: url({{userpic}});">
+
+                </span>
+
+                <span class="student-list__item__name">
+                    <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
+                </span>
+
+                <ul class="socials">
+                {{#each links}}
+                    <li class="socials__item">
+                        <a class="socials__item_link" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
+                    </li>
+                {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+    </ul>
+</div>

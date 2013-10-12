@@ -1,0 +1,81 @@
+.student-list__item {
+    line-height: 50px;
+    width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    margin: 0 0 20px 0;
+}
+
+.student-list__item__userpic {
+    border: 1px silver solid;
+    display: inline-block;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.student-list__item__name {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    display: inline-block;
+}
+
+.socials {
+    padding: 0;
+    float: right;
+    margin: -15px -10px -10px 0;
+}
+
+.socials__item {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 4px 0;
+}
+
+.socials__item_link {
+    border: 0;
+}
+
+.student-card_photo,
+.student-card_info {
+    float: left;
+}
+
+.student-card_photo {
+    margin: 0 20px 0 0;
+    float: right;
+}
+
+.student-card_name-wrapper {
+    line-height: 13px;
+    margin: 0 0 20px 0;
+}
+
+.student-card_name {
+    font-size: 1.2em;
+}
+
+.student-card_socials {
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+
+.student-card_socials__item {
+    float: left;
+    margin: 0 7px 0 0;
+    /*width: 20px;
+    height: 20px;*/
+}
+
+.student-card_socials__item_link {
+    border: 0;
+}
