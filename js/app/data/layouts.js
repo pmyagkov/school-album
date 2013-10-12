@@ -5,7 +5,7 @@ define(function () {
     return [
         {
             id: "about", route: "!/about", title: "О школе",
-            views: [{id: "header", el: ".header"}, {id: "about", el: ".content"}],
+            views: [{id: "header", el: ".header"}, {id: "twitter", el: ".content"}, {id: "about", el: ".content"}],
             isDefault: true
         },
         {

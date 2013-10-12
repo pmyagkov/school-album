@@ -37,8 +37,12 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
                 this.setElement(this.el);
             }
 
-            var str = this.template(this.model.toJSON());
-            this.$el.append(str);
+            if (!this._$container) {
+                var str = this.template(this.model ? this.model.toJSON() : undefined);
+                this._$container = $(str);
+            }
+
+            this.$el.append(this._$container);
 
             return this;
         },

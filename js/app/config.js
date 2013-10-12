@@ -40,6 +40,7 @@ requirejs.config({
         LectureView: 'views/LectureView',
         LecturesView: 'views/LecturesView',
         LecturerView: 'views/LecturerView',
+        TwitterView: 'views/TwitterView',
         BaseView: 'views/BaseView',
         ViewFactory: 'views/ViewFactory',
         //templates

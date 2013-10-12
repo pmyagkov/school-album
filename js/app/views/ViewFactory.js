@@ -1,12 +1,14 @@
 /* global define */
 define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
         'LectureView', 'LecturesView',
-        'LecturerView'
+        'LecturerView',
+        'TwitterView'
 
 ],
     function (HeaderView, AboutView, StudentView, StudentsView,
               LectureView, LecturesView,
-              LecturerView
+              LecturerView,
+              TwitterView
         ) {
         "use strict";
 
@@ -68,6 +70,10 @@ define(['HeaderView', 'AboutView', 'StudentView', 'StudentsView',
                         }
 
                         view = new LecturerView({model: lecturer, el: el});
+                        break;
+
+                    case "twitter":
+                        view = new TwitterView({el : el});
                         break;
 
                     default:
