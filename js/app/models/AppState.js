@@ -37,18 +37,20 @@ define([
     var fetchCollection = function (collectionCtor, values, options) {
         var result = new collectionCtor();
         var localStorageEmpty = false;
-        result.fetch({success: function () {
-            if (!result.length) {
-                localStorageEmpty = true;
-                result.reset(values, _.extend(options ? options : {}, {silent: true}));
+        result.fetch({
+            success: function () {
+                if (!result.length) {
+                    localStorageEmpty = true;
+                    result.reset(values, _.extend(options ? options : {}, {silent: true}));
+                    if (localStorageEmpty) {
+                        result.save();
+                    }
+                }
+            },
+            error: function (e) {
+                console.error(collectionCtor.name + ".fetch failure: ", e);
             }
-        }, error: function (e) {
-            console.error(collectionCtor.name + ".fetch failure: ", e);
-        }})
-
-        if (localStorageEmpty) {
-            result.save();
-        }
+        });
 
         return result;
     };
