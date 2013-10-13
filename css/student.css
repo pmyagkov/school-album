@@ -7,6 +7,42 @@
     margin: 0 0 20px 0;
 }
 
+.search {
+    float: right;
+}
+
+.search-control{
+    font-size: 0.7em;
+}
+
+.item_left,
+.item_right{
+    float: left;
+}
+
+.item_right {
+    width: 180px;
+    margin: 0 0 0 10px;
+    text-align: center;
+    height: 80px;
+}
+
+.student-list__item__city {
+    font-size: 0.9em;
+}
+
+.highlight {
+    background-color: #FDE785;
+}
+.entity-list__item .entity-list__item_remove {
+    display: none;
+}
+
+.entity-list__item:hover .entity-list__item_remove {
+    display: block;
+}
+
+
 .student-list__item__userpic {
     border: 1px silver solid;
     display: inline-block;
@@ -22,11 +58,17 @@
 .student-list__item__name {
     font-size: 16px;
     text-align: center;
-    margin: 0 0 0 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 160px;
     display: inline-block;
+    margin: 13px 0 6px 0;
+}
+
+.student-list__item__city-wrapper {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .socials {

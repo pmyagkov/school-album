@@ -5,6 +5,10 @@ define(['BaseView'], function (BaseView) {
     return parent.extend({
         constructor: function LecturesView() {
             BaseView.prototype.constructor.apply(this, arguments);
+        },
+
+        events: {
+            "input .search-control": "doSearch"
         }
     });
 });

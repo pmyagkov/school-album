@@ -75,9 +75,54 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
             this.clean();
             this.$el.off();
             this.off();
+        },
+
+        doSearch: function (e) {
+            if (!this._$input) {
+                this._$input = $(e.target);
+            }
+
+            var query = this._$input.val();
+
+            if (!query) {
+
+                this.$(".entity-list__item").each(function (i, e) {
+                    $.each($(e).find(".highlight"), function (i, e) {
+                        var $e = $(e);
+                        $e.replaceWith($e.text());
+                    })
+                });
+                this.$(".entity-list__item").show();
+            }
+            else {
+                var ids = this.model.search(query);
+                var selector = _.map(ids, function (e) {
+                    return  ".entity-list__item_" + e;
+                }).join(",");
+
+                this.$(".entity-list__item").hide().filter(selector).show().each(function(i, e) {
+                    var $e = $(e);
+
+                    $.each($e.find(".highlight"), function (i, e) {
+                        var $e = $(e);
+                        $e.replaceWith($e.text());
+                    })
+
+                    $e.find(".for-search").each(function (i, e) {
+                        var $text = $(e);
+                        var text = $text.text();
+                        var index, newText;
+
+                        if ((index = text.toLowerCase().indexOf(query)) > -1) {
+                            var pattern = text.substr(index, query.length);
+                            newText = text.replace(pattern, function ($1) {
+                                return "<span class='highlight'>" + $1 + "</span>";
+                            });
+                            $text.html(newText);
+                        }
+                    });
+                });
+            }
         }
-
-
-
     });
 });

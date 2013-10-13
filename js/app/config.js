@@ -11,7 +11,6 @@ requirejs.config({
         jquery: '../lib/jquery',
         "jquery.validate": '../lib/jquery.validate',
         handlebars: '../lib/handlebars-runtime',
-        toastr: '../lib/toastr.min',
         // app
         // controllers
         Router: 'controllers/Router',

@@ -12,7 +12,8 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
         },
 
         events: {
-            "click .entity-list": "click"
+            "click .entity-list": "click",
+            "input .search-control": "doSearch"
         },
 
         click: function (e) {
@@ -26,6 +27,8 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
                 return false;
             }
         },
+
+
 
         render: function () {
             parent.prototype.render.apply(this, arguments);

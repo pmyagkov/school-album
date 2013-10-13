@@ -69,26 +69,19 @@ define([
     var ctor = function AppStateController(layoutsObj, dataObj) {
         if (!_instance) {
 
-
+            // prepare models for initialization
             var lecturersArray = _.map(dataObj.lecturers, function (lecturer) {
                 var extended = _.extend(lecturer, {lectures: _.where(dataObj.lectures, {lecturerId: lecturer.id})});
 
                 return new LecturerModel(extended);
             });
-/*
-            var lectures = _.map(dataObj.lectures, function (lecture) {
 
-                return new LectureModel(extended);
-            });*/
-
-
-            // information about possible layouts, views, routes, etc.
-            this._layouts = new LayoutCollection(layoutsObj);
             var lecturers = new LecturerCollection(lecturersArray);
             var lectures = new LectureCollection(_(lecturersArray).chain().map(function (e) {
                 return e.get("lectures").models;
             }).flatten().uniq().value());
 
+            this._layouts = new LayoutCollection(layoutsObj);
             this._data = {
                 about: new AboutModel(dataObj.about),
                 students: fetchCollection(StudentCollection, dataObj.students),

@@ -1,8 +1,14 @@
 <div class="lectures">
-    <h2>Лекции этого года:</h2>
+    <h2>
+        Лекции этого года:
+        <div class="search">
+            <i class="icon-search"></i>
+            <input type="text" class="search-control">
+        </div>
+    </h2>
     <ul class="entity-list">
         {{#each .}}
-            <li class="entity-list__item entity-list__item_m">
+            <li class="entity-list__item entity-list__item_m entity-list__item_{{id}}">
                 <ul class="lecture-list__item_icons">
                     {{#if video}}
                         <li class="lecture-list__item_icons__item">
@@ -15,12 +21,12 @@
                         </li>
                     {{/if}}
                 </ul>
-                <div class="lectures-list__item_title">
+                <div class="lectures-list__item_title for-search">
                     <a href="#!/lectures/{{id}}" title="{{title}}">{{title}}</a>
                 </div>
                 <div class="lectures-list__item_name">
                     <span class="caption">Лекцию читал{{#if lecturer.sex}}a{{/if}}&nbsp;&nbsp;</span>
-                    <a href="#!/lecturers/{{lecturer.id}}" title="Посмотреть информацию про лектора">{{lecturer.firstName}} {{lecturer.lastName}}</a>
+                    <a href="#!/lecturers/{{lecturer.id}}" class="for-search" title="Посмотреть информацию про лектора">{{lecturer.firstName}} {{lecturer.lastName}}</a>
                 </div>
                 <div class="lectures-list__item-date">
                     <span class="caption">Лекцию проходила&nbsp;&nbsp;</span>

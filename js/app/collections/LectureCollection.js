@@ -24,6 +24,18 @@ define(['backbone', 'localStorage', 'underscore',
                 return lecture.get("date");
             },
 
+            search: function (query) {
+                query = query.toLowerCase();
+                var ids = [];
+                this.each(function (e) {
+                    if ((e.get("lecturer").get("firstName") + " " + e.get("lecturer").get("lastName")).toLowerCase().indexOf(query) > -1
+                        || e.get("title").toLowerCase().indexOf(query) > -1) {
+                        ids.push(e.id);
+                    }
+                })
+                return ids;
+            },
+
             localStorage: new Backbone.LocalStorage("LectureCollection")
         });
     }
