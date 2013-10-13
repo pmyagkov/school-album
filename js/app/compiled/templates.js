@@ -522,7 +522,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23shri\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter transparent\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>";
+  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23shri\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter noscrollbar\" data-tweet-limit=\"5\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>";
   });
 
 return this["templates"];
