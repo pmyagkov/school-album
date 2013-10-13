@@ -7,19 +7,21 @@
             <span class="caption">Лекцию читает&nbsp;</span>
             <a href="#!/lecturers/{{lecturer.id}}" title="Посмотреть информацию про лектора">{{lecturer.firstName}} {{lecturer.lastName}}</a>
         </div>
-        {{#if otherLectures.length}}
+        {{#if_gt lecturer.lectures.length compare=1}}
             <div class="lecture__others">
                 <div class="caption caption_v">Другие лекции автора:</div>
                 <ul class="lecture__others-list">
-                    {{#each otherLectures}}
-                        <li class="lecture__others-list__item">
-                            <a href="#!/lectures/{{id}}" title="{{title}}">{{title}}</a>
-                        </li>
+                    {{#each lecturer.lectures}}
+                        {{#if title}}
+                            <li class="lecture__others-list__item">
+                                <a href="#!/lectures/{{id}}" title="{{title}}">{{title}}</a>
+                            </li>
+                        {{/if}}
                     {{/each}}
-
                 </ul>
             </div>
-        {{/if}}
+        {{/if_gt}}
+
 
     </div>
 

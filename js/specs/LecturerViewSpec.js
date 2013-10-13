@@ -6,7 +6,7 @@ define(['LecturerView'], function (LecturerView){
     describe("LecturerView", function () {
         it("should have a constructor named LecturerView", function () {
             var view = new LecturerView();
-            expect(view.constructor.name).toBe("LecturerView");
+            expect(view.constructorName).toBe("LecturerView");
         });
     });
 

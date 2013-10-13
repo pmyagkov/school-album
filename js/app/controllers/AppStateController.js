@@ -184,7 +184,7 @@ define([
 
                 case "lecture":
                     if (!params.length) {
-                        throw new Error("Index of the lecture is not passed to ViewFactory to construct 'lecture' view");
+                        throw new Error("Index of the lecture is not passed to construct 'lecture' view");
                     }
 
                     var lecture = self._data.lectures.get(params[0]);
@@ -201,7 +201,7 @@ define([
 
                 case "lecturer":
                     if (!params.length) {
-                        throw new Error("Index of the lecturer is not passed to ViewFactory to construct 'lecturer' view");
+                        throw new Error("Index of the lecturer is not passed to construct 'lecturer' view");
                     }
 
                     var lecturer = self._data.lecturers.get(params[0]);

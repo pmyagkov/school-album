@@ -10,9 +10,11 @@ define(['relational', 'underscore', 'LectureModel', 'LectureCollection'], functi
             {
                 type: "HasMany",
                 key: "lectures",
+                includeInJSON: true,
                 relatedModel: LectureModel,
                 collectionType: LectureCollection,
                 reverseRelation: {
+                    includeInJson: true,
                     key: "lecturer"
                 }
             }
@@ -28,14 +30,8 @@ define(['relational', 'underscore', 'LectureModel', 'LectureCollection'], functi
             }
         },
 
-        addLectures: function (lectures) {
-            if (!this._lectures) {
-                this._lectures = lectures;
-            }
-        },
-
         getLectures: function () {
-            return this._lectures;
+            return this.get("lectures");
         }/*,
 
         toJSON: function () {

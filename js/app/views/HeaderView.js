@@ -3,6 +3,7 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
     "use strict";
 
     return BaseView.extend({
+        constructorName: "HeaderView",
         constructor: function HeaderView() {
             BaseView.prototype.constructor.apply(this, arguments);
             this._wasRendered = false;
@@ -47,9 +48,13 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
 
             if (this._wasRendered) {
                 var $curr = this.$(".header__links__item_" + layout.id);
+                var $inks = this.$(".header__links__item").removeClass("header__links__item_current");
                 if ($curr.length) {
-                    this.$(".header__links__item").removeClass("header__links__item_current")
-                        .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+                    $inks.filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
+                }
+                else {
+                    var parentLayout = this.model.get(layout.get("parent"));
+                    $inks.filter(".header__links__item_" + parentLayout.id).addClass("header__links__item_current");
                 }
             }
         }

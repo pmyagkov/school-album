@@ -22,17 +22,19 @@
                     {{/each}}
                 </ul>
             </div>
+            {{#if about}}
             <div class="student-card_about">
                 <div class="caption caption_v">О себе:</div>
                 {{about}}
 
             </div>
+            {{/if}}
 
             <div class="student-card_favourite-lectures">
 
             </div>
         </div>
-        <div class="student-card_photo" style="background-image: url('{{userpic}}')">
+        <div class="student-card_photo" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}img/default.png{{/if}}')">
         </div>
 
     </div>

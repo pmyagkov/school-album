@@ -4,6 +4,8 @@ define(['BaseView'], function (BaseView) {
 
     var parent = BaseView;
     return parent.extend({
+        // it for IE. it doesn't recognize this.constructor.name
+        constructorName: "TwitterView",
         constructor: function TwitterView() {
             parent.prototype.constructor.apply(this, arguments);
 

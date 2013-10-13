@@ -4,6 +4,7 @@ define(['BaseView', 'jquery.validate'], function (BaseView, $) {
 
     var parent = BaseView;
     return parent.extend({
+        constructorName: "StudentView",
         constructor: function StudentView() {
             parent.prototype.constructor.apply(this, arguments);
         },

@@ -13,12 +13,12 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "students", el: ".content"}]
         },
         {
-            id: "addStudent", route: "!/students/add",
+            id: "addStudent", route: "!/students/add", parent: "students",
             views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}],
             transitions: {"save": "students", "discard": "students"}
         },
         {
-            id: "student", route: "!/students/:i(/:command)",
+            id: "student", route: "!/students/:i(/:command)", parent: "students",
             views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}],
             transitions: {"save": "students", "discard": "students"}
         },
@@ -27,7 +27,7 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "lectures", el: ".content"}]
         },
         {
-            id: "lecture", route: "!/lectures/:i",
+            id: "lecture", route: "!/lectures/:i", parent: "lectures",
             views: [{id: "header", el: ".header"}, {id: "lecture", el: ".content"}]
         },
         {
@@ -35,7 +35,7 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "lecturers", el: ".content"}]
         },
         {
-            id: "lecturer", route: "!/lecturers/:i",
+            id: "lecturer", route: "!/lecturers/:i", parent: "lecturers",
             views: [{id: "header", el: ".header"}, {id: "lecturer", el: ".content"}]
         }
     ];

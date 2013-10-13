@@ -4,6 +4,7 @@ define(['underscore', 'BaseView'], function (_, BaseView) {
 
     var parent = BaseView;
     return parent.extend({
+        constructorName: "StudentsView",
         constructor: function StudentsView() {
             parent.prototype.constructor.apply(this, arguments);
         },

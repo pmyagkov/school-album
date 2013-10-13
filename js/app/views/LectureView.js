@@ -3,6 +3,7 @@ define(['BaseView'], function (BaseView) {
 
     var parent = BaseView;
     return parent.extend({
+        constructorName: "LectureView",
         constructor: function LectureView() {
             BaseView.prototype.constructor.apply(this, arguments);
         }

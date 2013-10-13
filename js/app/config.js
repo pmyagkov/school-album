@@ -46,7 +46,6 @@ requirejs.config({
         LecturersView: 'views/LecturersView',
         TwitterView: 'views/TwitterView',
         BaseView: 'views/BaseView',
-        ViewFactory: 'views/ViewFactory',
         //templates
         templates: 'compiled/templates'
     },

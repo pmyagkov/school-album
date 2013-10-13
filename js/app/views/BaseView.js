@@ -10,7 +10,7 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
                 this.el = arguments.length > 0 ? arguments[0].el : undefined;
             }
 
-            var templateName = Utils.extractViewName(this.constructor.name);
+            var templateName = Utils.extractViewName(this.constructorName);
             if (options && options.command) {
                 this._command = options.command === "add" ? "edit" : options.command;
                 templateName += this._command[0].toUpperCase() + this._command.substr(1);
@@ -41,7 +41,7 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
                 this._$container.remove();
             }
 
-            var str = this.template(this.model ? this.model.toJSON() : undefined);
+            var str = this.template(this.model ? this.model.toJSON() : {});
             this._$container = $(str);
             this.$el.append(this._$container);
 
@@ -108,7 +108,7 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
                         $e.replaceWith($e.text());
                     })
 
-                    $e.find(".for-search").each(function (i, e) {
+                    $.each($e.find(".for-search"), function (i, e) {
                         var $text = $(e);
                         var text = $text.text();
                         var index, newText;
