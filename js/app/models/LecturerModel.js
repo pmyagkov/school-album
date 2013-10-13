@@ -1,11 +1,22 @@
 /* global define */
 
-define(['backbone', 'underscore'], function (Backbone, _) {
+define(['relational', 'underscore', 'LectureModel', 'LectureCollection'], function (Backbone, _, LectureModel, LectureCollection) {
     "use strict";
 
-    var parent = Backbone.Model;
+    var parent = Backbone.RelationalModel;
 
     return parent.extend({
+        relations: [
+            {
+                type: "HasMany",
+                key: "lectures",
+                relatedModel: LectureModel,
+                collectionType: LectureCollection,
+                reverseRelation: {
+                    key: "lecturer"
+                }
+            }
+        ],
         constructor: function LecturerModel() {
             parent.apply(this, arguments);
         },
@@ -25,7 +36,7 @@ define(['backbone', 'underscore'], function (Backbone, _) {
 
         getLectures: function () {
             return this._lectures;
-        },
+        }/*,
 
         toJSON: function () {
             var attrs = parent.prototype.toJSON.apply(this, arguments);
@@ -36,6 +47,6 @@ define(['backbone', 'underscore'], function (Backbone, _) {
             });
 
             return attrs;
-        }
+        }*/
     });
 });

@@ -37,6 +37,10 @@ function program2(depth0,data) {
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
+    + "\" data-layout=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
     + "\">\r\n                <a class=\"header__links__item_link\" href=\"#";
   if (stack1 = helpers.route) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.route; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
@@ -49,7 +53,7 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  buffer += "<h1 class=\"header__title\">\r\n    <a class=\"link header__title-link\" href=\"#\">\r\n        <span class=\"header__title-link__first-letter\">В</span>ыпускной альбом ШРИ\r\n    </a>\r\n</h1>\r\n<div class=\"header__links\">\r\n    ";
+  buffer += "<h1 class=\"header__title\">\r\n    <a class=\"link header__title-link\" href=\"#\">\r\n        <span class=\"header__title-link__first-letter\">В</span>ыпускной альбом ШРИ 2013\r\n    </a>\r\n</h1>\r\n<div class=\"header__links\">\r\n    ";
   stack1 = helpers.each.call(depth0, depth0, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\r\n</div>";
@@ -148,7 +152,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\r\n                <a class=\"lecturer__info_tech-link\" target=\"_blank\" href=\"http://tech.yandex.ru/people/";
+  buffer += "\r\n                <a class=\"lecturer__info_tech-link link link_i\" target=\"_blank\" href=\"http://tech.yandex.ru/people/";
   if (stack1 = helpers.nativeId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.nativeId; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -216,6 +220,53 @@ function program5(depth0,data) {
   stack1 = helpers.each.call(depth0, depth0.lectures, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\r\n\r\n            </ul>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>";
+  return buffer;
+  });
+
+this["templates"]["lecturers"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, self=this, functionType="function", escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\r\n            <li class=\"entity-list__item entity-list__item_s ";
+  stack1 = helpers['if'].call(depth0, depth0.isNew, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\r\n                <a class=\"link_i\" href=\"#!/lecturers/";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\r\n                <span class=\"student-list__item__userpic\" style=\"background-image: url('";
+  if (stack1 = helpers.userpic) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.userpic; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "');\">\r\n\r\n                </span>\r\n                </a>\r\n\r\n                <span class=\"student-list__item__name\">\r\n                    <a class=\"link\" href=\"#!/lecturers/";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.firstName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.firstName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "&nbsp;";
+  if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>\r\n                </span>\r\n\r\n            </li>\r\n        ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return "entity-list__item_colored";
+  }
+
+  buffer += "<div class=\"students\">\r\n    <h2 class=\"header-title\">\r\n        В этом году в школе преподавали:\r\n    </h2>\r\n\r\n    <ul class=\"entity-list\">\r\n        ";
+  stack1 = helpers.each.call(depth0, depth0, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\r\n    </ul>\r\n</div>\r\n";
   return buffer;
   });
 
@@ -293,7 +344,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\r\n                        <li class=\"student-card_socials__item\">\r\n                            <a class=\"student-card_socials__item_link student-card_socials__item_link_"
+  buffer += "\r\n                        <li class=\"student-card_socials__item\">\r\n                            <a target=\"_blank\" class=\"link link_i student-card_socials__item_link student-card_socials__item_link_"
     + escapeExpression(((stack1 = ((stack1 = data),stack1 == null || stack1 === false ? stack1 : stack1.key)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\"\r\n                               title=\""
     + escapeExpression(((stack1 = ((stack1 = data),stack1 == null || stack1 === false ? stack1 : stack1.key)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -339,10 +390,23 @@ function program1(depth0,data) {
 this["templates"]["studentEdit"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
+function program1(depth0,data) {
+  
+  var stack1;
+  if (stack1 = helpers.userpic) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.userpic; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  return escapeExpression(stack1);
+  }
 
-  buffer += "<div class=\"student-edit\">\r\n    <form>\r\n        <h2 class=\"header-title\">\r\n            Карточка студента\r\n            <a class=\"student-edit_link-save link link_i\" href=\"#\" title=\"Сохранить карточку\">\r\n                <span class=\"\"><i class=\"icon-save\"></i></span>\r\n            </a>\r\n            <a class=\"student-edit_link-discard link link_i\" href=\"#\" title=\"Отменить редактирование\">\r\n                <span class=\"\"><i class=\"icon-remove\"></i></span>\r\n            </a>\r\n        </h2>\r\n        <div class=\"student-card\">\r\n\r\n            <div class=\"student-card_info\">\r\n                <div class=\"student-card_name-wrapper\">\r\n                    <div class=\"control-wrapper\">\r\n                        <input type=\"text\" id=\"firstName\" name=\"firstName\" placeholder=\"Имя\" value=\"";
+function program3(depth0,data) {
+  
+  
+  return "/img/default.png";
+  }
+
+  buffer += "<div class=\"student-edit\">\r\n    <form>\r\n        <h2 class=\"header-title\">\r\n            Карточка студента\r\n            <button type=\"submit\" class=\"student-edit_button-save\">\r\n                <i class=\"icon-save\"></i>\r\n            </button>\r\n            <button type=\"reset\" class=\"student-edit_button-reset\">\r\n                <i class=\"icon-remove\"></i>\r\n            </button>\r\n\r\n        </h2>\r\n        <div class=\"student-card\">\r\n\r\n            <div class=\"student-card_info\">\r\n                <div class=\"student-card_name-wrapper\">\r\n                    <div class=\"control-wrapper\">\r\n                        <input type=\"text\" id=\"firstName\" name=\"firstName\" placeholder=\"Имя\" value=\"";
   if (stack1 = helpers.firstName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.firstName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -354,7 +418,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.city) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.city; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" required>\r\n                    </div>\r\n\r\n\r\n\r\n                </div>\r\n                <div class=\"student-card_socials student-card_socials_edit\">\r\n                    <div class=\"caption caption_v\">\r\n                        Ссылки на профили:\r\n                    </div>\r\n                    <ul class=\"student-card_socials-list student-card_socials-list_edit\">\r\n                        <li class=\"student-card_socials-list__item student-card_socials-list__item_edit\">\r\n                            <input class=\"student-card_socials-list__item_control\" type=\"text\" name=\"links.vk\" placeholder=\"http://vk.com\" value=\""
+    + "\" required>\r\n                    </div>\r\n\r\n\r\n\r\n                </div>\r\n\r\n                <div class=\"student-card_userpic\">\r\n                    <div class=\"caption caption_v\">\r\n                        Ссылка на фото:\r\n                    </div>\r\n                    <div class=\"student-card_userpic-control-wrapper control-wrapper\">\r\n                        <input class=\"student-card_userpic-control\" type=\"text\" id=\"userpic\" name=\"userpic\" placeholder=\"\" value=\"";
+  if (stack1 = helpers.userpic) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.userpic; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\r\n                        <span class=\"hint\">Поддерживаются форматы jpg, png, gif</span>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"student-card_socials student-card_socials_edit\">\r\n                    <div class=\"caption caption_v\">\r\n                        Ссылки на профили:\r\n                    </div>\r\n                    <ul class=\"student-card_socials-list student-card_socials-list_edit\">\r\n                        <li class=\"student-card_socials-list__item student-card_socials-list__item_edit\">\r\n                            <input class=\"student-card_socials-list__item_control\" type=\"text\" name=\"links.vk\" placeholder=\"http://vk.com\" value=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.links),stack1 == null || stack1 === false ? stack1 : stack1.vk)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">\r\n                            <i class=\"icon-vk\"></i>\r\n                        </li>\r\n                        <li class=\"student-card_socials-list__item student-card_socials-list__item_edit\">\r\n                            <input class=\"student-card_socials-list__item_control\" type=\"text\" name=\"links.facebook\" placeholder=\"http://facebook.com\" value=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.links),stack1 == null || stack1 === false ? stack1 : stack1.facebook)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -362,19 +430,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.links),stack1 == null || stack1 === false ? stack1 : stack1.github)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">\r\n                            <i class=\"icon-github\"></i>\r\n                        </li>\r\n                        <li class=\"student-card_socials-list__item student-card_socials-list__item_edit\">\r\n                            <input class=\"student-card_socials-list__item_control\" type=\"text\" name=\"links.ya\" placeholder=\"http://ya.ru\" value=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.links),stack1 == null || stack1 === false ? stack1 : stack1.ya)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">\r\n                            <i class=\"icon-ya\"></i>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n                <div class=\"student-card_userpic\">\r\n                    <div class=\"caption caption_v\">\r\n                        Ссылка на фото:\r\n                    </div>\r\n                    <div class=\"student-card_userpic-control-wrapper control-wrapper\">\r\n                        <input class=\"student-card_userpic-control\" type=\"text\" id=\"userpic\" name=\"userpic\" placeholder=\"\" value=\"";
-  if (stack2 = helpers.userpic) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.userpic; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\" required>\r\n                    </div>\r\n                </div>\r\n                <div class=\"student-card_about\">\r\n                    <div class=\"caption caption_v\">О себе:</div>\r\n                    <textarea name=\"about\" class=\"student-card_about-control\">";
+    + "\">\r\n                            <i class=\"icon-ya\"></i>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n\r\n                <div class=\"student-card_about\">\r\n                    <div class=\"caption caption_v\">О себе:</div>\r\n                    <textarea name=\"about\" class=\"student-card_about-control\">";
   if (stack2 = helpers.about) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.about; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
     + "</textarea>\r\n                </div>\r\n\r\n                <div class=\"student-card_favourite-lectures\">\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"student-card_photo\" style=\"background-image: url('";
-  if (stack2 = helpers.userpic) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.userpic; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "');\">\r\n                <div class=\"student-card_photo_shadow\"></div>\r\n            </div>\r\n\r\n        </div>\r\n    </form>\r\n\r\n</div>";
+  stack2 = helpers['if'].call(depth0, depth0.userpic, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "');\">\r\n                <div class=\"student-card_photo_shadow\"></div>\r\n            </div>\r\n\r\n        </div>\r\n    </form>\r\n\r\n</div>";
   return buffer;
   });
 
@@ -386,11 +449,22 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\r\n            <li class=\"entity-list__item entity-list__item_s\">\r\n                <span class=\"student-list__item__userpic\" style=\"background-image: url(";
-  if (stack1 = helpers.userpic) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.userpic; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += "\r\n            <li class=\"entity-list__item entity-list__item_s entity-list__item_";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + ");\">\r\n\r\n                </span>\r\n\r\n                <span class=\"student-list__item__name\">\r\n                    <a class=\"link\" href=\"#!/students/";
+    + "\" data-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\r\n                <a class=\"entity-list__item_remove link link_i\" href=\"#\"><i class=\"icon-remove\"></i></a>\r\n                <a class=\"link_i\" href=\"#!/students/";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\r\n                    <span class=\"student-list__item__userpic\" style=\"background-image: url('";
+  stack1 = helpers['if'].call(depth0, depth0.userpic, {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "');\">\r\n                    </span>\r\n                </a>\r\n\r\n\r\n\r\n                <span class=\"student-list__item__name\">\r\n                    <a class=\"link\" href=\"#!/students/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -402,16 +476,30 @@ function program1(depth0,data) {
   if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>\r\n                </span>\r\n\r\n                <ul class=\"socials\">\r\n                ";
-  stack1 = helpers.each.call(depth0, depth0.links, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+    + "</a>\r\n                </span>\r\n<!--\r\n                <ul class=\"socials\">\r\n                ";
+  stack1 = helpers.each.call(depth0, depth0.links, {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\r\n                </ul>\r\n            </li>\r\n        ";
+  buffer += "\r\n                </ul>-->\r\n            </li>\r\n        ";
   return buffer;
   }
 function program2(depth0,data) {
   
+  var stack1;
+  if (stack1 = helpers.userpic) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.userpic; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  return escapeExpression(stack1);
+  }
+
+function program4(depth0,data) {
+  
+  
+  return "img/default.png";
+  }
+
+function program6(depth0,data) {
+  
   var buffer = "", stack1;
-  buffer += "\r\n                    <li class=\"socials__item\">\r\n                        <a class=\"socials__item_link\" href=\""
+  buffer += "\r\n                    <li class=\"socials__item\">\r\n                        <a class=\"socials__item_link link link_i\" target=\"_blank\" href=\""
     + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
     + "\" title=\""
     + escapeExpression(((stack1 = ((stack1 = data),stack1 == null || stack1 === false ? stack1 : stack1.key)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -421,7 +509,7 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"students\">\r\n    <h2 class=\"header-title\">В этом году в школе учились:</h2>\r\n    <ul class=\"entity-list\">\r\n        ";
+  buffer += "<div class=\"students\">\r\n    <h2 class=\"header-title\">\r\n        В этом году в школе учились:\r\n        <a class=\"link link_i\" href=\"#!/students/add\" title=\"Добавить студента\">\r\n            <span class=\"students_add-icon\"><i class=\"icon-user-add\"></i></span>\r\n        </a>\r\n    </h2>\r\n\r\n    <ul class=\"entity-list\">\r\n        ";
   stack1 = helpers.each.call(depth0, depth0, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\r\n    </ul>\r\n</div>\r\n";
@@ -434,7 +522,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23shri\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter transparent\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>";
+  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23shri\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter noscrollbar\" data-tweet-limit=\"5\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>";
   });
 
 return this["templates"];

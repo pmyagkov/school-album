@@ -21,8 +21,18 @@ define(['backbone', 'underscore'], function (Backbone, _) {
             return this.get('views');
         },
 
-        setCurrent: function (value) {
+        setCurrentLayout: function (value) {
             this.set({"current": value}, {"silent": !value});
+        },
+
+        getTransition: function (event) {
+            var transition;
+            if (transition = this.get("transitions")[event]) {
+                return transition;
+            }
+            else {
+                throw new Error("Can't find transition for layout " + this.id + " for event " + event);
+            }
         }
     });
 });

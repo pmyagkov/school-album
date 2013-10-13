@@ -1,12 +1,12 @@
 <h1 class="header__title">
     <a class="link header__title-link" href="#">
-        <span class="header__title-link__first-letter">В</span>ыпускной альбом ШРИ
+        <span class="header__title-link__first-letter">В</span>ыпускной альбом ШРИ 2013
     </a>
 </h1>
 <div class="header__links">
     {{#each .}}
         {{#if title}}
-            <div class="header__links__item header__links__item_{{id}}">
+            <div class="header__links__item header__links__item_{{id}}" data-layout="{{id}}">
                 <a class="header__links__item_link" href="#{{route}}">{{title}}</a>
             </div>
         {{/if}}

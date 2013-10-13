@@ -45,8 +45,9 @@
     border: 0;
 }
 
+.students_add-icon,
 .student_edit-icon,
-.student-edit_link-save {
+.student-edit_button-save {
     margin: 0 0 0 10px;
 }
 
@@ -129,9 +130,15 @@
     margin: 0 0 20px 0;
 }
 
+.student-card_about {
+    font-size: 0.9em;
+    padding: 0 10px 0 0;
+    text-align: justify;
+}
+
 .student-card_about-control {
     font-size: 0.9em;
-    width: 600px;
+    width: 606px;
     height: 200px;
 }
 
@@ -154,6 +161,11 @@ label.error {
 }
 
 .student-card_userpic-control {
-    width: 600px;
+    width: 606px;
+    font-size: 0.9em;
 }
 
+.entity-list__item_remove {
+    position: absolute;
+    top: 0; right: 0;
+}

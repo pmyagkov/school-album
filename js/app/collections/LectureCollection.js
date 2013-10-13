@@ -7,9 +7,8 @@ define(['backbone', 'localStorage', 'underscore',
 
         var parent = BaseCollection;
         return parent.extend({
-            constructor: function LectureCollection(lectureArray, options) {
+            constructor: function LectureCollection() {
                 parent.apply(this, arguments);
-                this._lecturers = options.lecturers;
             },
 
             model: function (attrs, options) {
@@ -18,7 +17,7 @@ define(['backbone', 'localStorage', 'underscore',
                 });
             },
 
-            initialize: function (lectureArray, lecturerCollection) {
+            initialize: function () {
 
             },
             comparator: function (lecture) {

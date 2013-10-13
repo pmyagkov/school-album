@@ -6,12 +6,16 @@ requirejs.config({
         // libs
         backbone: '../lib/backbone',
         localStorage: '../lib/backbone.localStorage',
+        relational: '../lib/backbone-relational',
         underscore: '../lib/underscore',
         jquery: '../lib/jquery',
         "jquery.validate": '../lib/jquery.validate',
         handlebars: '../lib/handlebars-runtime',
+        toastr: '../lib/toastr.min',
         // app
-        Router: 'Router',
+        // controllers
+        Router: 'controllers/Router',
+        AppStateController: 'controllers/AppStateController',
         // objects
         events: 'Events',
         layoutsObj: 'data/layouts',
@@ -40,6 +44,7 @@ requirejs.config({
         LectureView: 'views/LectureView',
         LecturesView: 'views/LecturesView',
         LecturerView: 'views/LecturerView',
+        LecturersView: 'views/LecturersView',
         TwitterView: 'views/TwitterView',
         BaseView: 'views/BaseView',
         ViewFactory: 'views/ViewFactory',
@@ -65,9 +70,14 @@ requirejs.config({
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         },
+        relational: {
+            deps: ['backbone'],
+            exports: 'Backbone'
+        },
         handlebars: {
             exports: 'Handlebars'
         }
+
     }
 });
 

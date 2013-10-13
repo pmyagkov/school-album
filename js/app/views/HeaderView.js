@@ -17,7 +17,7 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
             this.changeCurrent = _.bind(this.changeCurrent, this);
 
             var model = arguments[0].model;
-            model.on("change:current", this.changeCurrent);
+            model.on("change:current", this.changeCurrent, this);
 
         },
 
@@ -26,9 +26,8 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
 
             BaseView.prototype.render.apply(this, arguments);
 
-            if (this._currentLayout) {
-                this.changeCurrent(this._currentLayout);
-            }
+            var currentLayout = this.model.getCurrentLayout();
+            this.changeCurrent(currentLayout);
         },
 
         events: {
@@ -39,20 +38,16 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
         navigationClick: function (event) {
             var $target = $(event.target);
             if (!$target.is("a")) {
-                this.trigger("navigate", $(event.target).find("a").attr("href"));
+                this.trigger("navigate", $target.closest(".header__links__item").data("layout"));
             }
         },
 
         changeCurrent: function (layout) {
-
             $(document).scrollTop(0);
-            if (!this._wasRendered) {
-                this._currentLayout = layout;
-            }
-            else {
+
+            if (this._wasRendered) {
                 var $curr = this.$(".header__links__item_" + layout.id);
                 if ($curr.length) {
-                    this._currentLayout = layout;
                     this.$(".header__links__item").removeClass("header__links__item_current")
                         .filter(".header__links__item_" + layout.id).addClass("header__links__item_current");
                 }

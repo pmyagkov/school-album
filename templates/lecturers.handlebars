@@ -1,0 +1,22 @@
+<div class="students">
+    <h2 class="header-title">
+        В этом году в школе преподавали:
+    </h2>
+
+    <ul class="entity-list">
+        {{#each .}}
+            <li class="entity-list__item entity-list__item_s {{#if isNew}}entity-list__item_colored{{/if}}">
+                <a class="link_i" href="#!/lecturers/{{id}}">
+                <span class="student-list__item__userpic" style="background-image: url('{{userpic}}');">
+
+                </span>
+                </a>
+
+                <span class="student-list__item__name">
+                    <a class="link" href="#!/lecturers/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
+                </span>
+
+            </li>
+        {{/each}}
+    </ul>
+</div>

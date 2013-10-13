@@ -22,8 +22,8 @@ define(['BaseView', 'jquery.validate'], function (BaseView, $) {
         },
 
         events: {
-            "click .student-edit_link-save": "save",
-            "click .student-edit_link-discard": "discard",
+            "submit form": "save",
+            "reset form": "discard",
             "input #userpic": "loadImage"
         },
         save: function() {
@@ -54,8 +54,9 @@ define(['BaseView', 'jquery.validate'], function (BaseView, $) {
 
                 });
 
-                this.model.save(obj);
-                this.trigger("navigate", "#!/students/" + this.model.id);
+                obj.created = new Date();
+                this.model.set(obj);
+                this.trigger("save", this.model);
 
             }
 
@@ -63,8 +64,10 @@ define(['BaseView', 'jquery.validate'], function (BaseView, $) {
         },
 
         discard: function () {
+
+
             if (confirm("Уверены, что хотите отменить редактирование?\nВсе несохраненные данные потеряются.")) {
-                this.trigger("navigate", "#!/students/" + this.model.id);
+                this.trigger("discard");
             }
             return false;
         },
