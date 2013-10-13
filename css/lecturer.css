@@ -2,7 +2,7 @@
     float: right;
 }
 
-.lecturer__lectures-list__item {
+.lecturer__lecture-list__item {
     margin: 0 0 10px 0;
 }
 
@@ -18,6 +18,3 @@
     margin: 0 0 20px 0;
 }
 
-.caption_v {
-    margin: 0 0 5px 0;
-}

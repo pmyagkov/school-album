@@ -186,7 +186,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\r\n                    <li class=\"lecturer__lectures-list__item\">\r\n                        <a href=\"#!/lectures/";
+  buffer += "\r\n                    <li class=\"lecturer__lecture-list__item\">\r\n                        <a href=\"#!/lectures/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -228,7 +228,7 @@ function program5(depth0,data) {
   if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\r\n        </div>\r\n\r\n        <div class=\"lecturer__lectures\">\r\n            <div class=\"caption caption_v\">Лекции автора:</div>\r\n            <ul class=\"lecturer__lectures-list\">\r\n                ";
+    + "\">\r\n        </div>\r\n\r\n        <div class=\"lecturer__lectures\">\r\n            <div class=\"caption caption_v\">Лекции автора:</div>\r\n            <ul class=\"lecturer__lecture-list\">\r\n                ";
   stack1 = helpers.each.call(depth0, depth0.lectures, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\r\n\r\n            </ul>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>";
@@ -300,7 +300,7 @@ function program1(depth0,data) {
   buffer += "\r\n                    ";
   stack1 = helpers['if'].call(depth0, depth0.slides, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\r\n                </ul>\r\n                <div class=\"lectures-list__item_title\">\r\n                    <a href=\"#!/lectures/";
+  buffer += "\r\n                </ul>\r\n                <div class=\"lecture-list__item_title\">\r\n                    <a href=\"#!/lectures/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -312,7 +312,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>\r\n                </div>\r\n                <div class=\"lectures-list__item_name\">\r\n                    <span class=\"caption\">Лекцию читал";
+    + "</a>\r\n                </div>\r\n                <div class=\"lecture-list__item_name\">\r\n                    <span class=\"caption\">Лекцию читал";
   stack2 = helpers['if'].call(depth0, ((stack1 = depth0.lecturer),stack1 == null || stack1 === false ? stack1 : stack1.sex), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "&nbsp;&nbsp;</span>\r\n                    <a href=\"#!/lecturers/"
@@ -321,7 +321,7 @@ function program1(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = depth0.lecturer),stack1 == null || stack1 === false ? stack1 : stack1.firstName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + " "
     + escapeExpression(((stack1 = ((stack1 = depth0.lecturer),stack1 == null || stack1 === false ? stack1 : stack1.lastName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\r\n                </div>\r\n                <div class=\"lectures-list__item-date\">\r\n                    <span class=\"caption\">Лекция проходила&nbsp;&nbsp;</span>\r\n                    <span class=\"lectures-list__item_date\">";
+    + "</a>\r\n                </div>\r\n                <div class=\"lecture-list__item-date\">\r\n                    <span class=\"caption\">Лекция проходила&nbsp;&nbsp;</span>\r\n                    <span class=\"lecture-list__item_date\">";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.formatDate || depth0.formatDate),stack1 ? stack1.call(depth0, depth0.date, options) : helperMissing.call(depth0, "formatDate", depth0.date, options)))
     + "</span>\r\n                </div>\r\n\r\n            </li>\r\n        ";

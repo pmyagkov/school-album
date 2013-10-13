@@ -21,16 +21,16 @@
                         </li>
                     {{/if}}
                 </ul>
-                <div class="lectures-list__item_title">
+                <div class="lecture-list__item_title">
                     <a href="#!/lectures/{{id}}" class="for-search" title="{{title}}">{{title}}</a>
                 </div>
-                <div class="lectures-list__item_name">
+                <div class="lecture-list__item_name">
                     <span class="caption">Лекцию читал{{#if lecturer.sex}}a{{/if}}&nbsp;&nbsp;</span>
                     <a href="#!/lecturers/{{lecturer.id}}" class="for-search" title="Посмотреть информацию про лектора">{{lecturer.firstName}} {{lecturer.lastName}}</a>
                 </div>
-                <div class="lectures-list__item-date">
+                <div class="lecture-list__item-date">
                     <span class="caption">Лекция проходила&nbsp;&nbsp;</span>
-                    <span class="lectures-list__item_date">{{formatDate date}}</span>
+                    <span class="lecture-list__item_date">{{formatDate date}}</span>
                 </div>
 
             </li>
