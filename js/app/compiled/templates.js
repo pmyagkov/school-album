@@ -549,7 +549,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23shri\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter noscrollbar\" data-tweet-limit=\"5\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>";
+  return "<div class=\"twitter-wrapper\">\r\n    <a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23%D1%88%D1%80%D0%B8\" data-widget-id=\"388997199356370945\" accesskey=\"\"\r\n        data-chrome=\"nofooter noscrollbar\" data-tweet-limit=\"5\">\r\n        Tweets about \"#shri\"\r\n    </a>\r\n    <script></script>\r\n</div>\r\n";
   });
 
 return this["templates"];

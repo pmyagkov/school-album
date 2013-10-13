@@ -25,6 +25,7 @@ define(['jquery', 'underscore', 'BaseView'], function ($, _, BaseView) {
         render: function () {
             this._wasRendered = true;
 
+            $(".content-loading").hide();
             BaseView.prototype.render.apply(this, arguments);
 
             var currentLayout = this.model.getCurrentLayout();

@@ -21,6 +21,10 @@ body {
     font-family: Arial, sans-serif;
     color: #303030;
 }
+.content-loading {
+    display: block;
+    margin: auto;
+}
 
 .link {
     color: #5e5e5e;
