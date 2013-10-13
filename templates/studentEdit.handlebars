@@ -37,7 +37,8 @@
                         Ссылка на фото:
                     </div>
                     <div class="student-card_userpic-control-wrapper control-wrapper">
-                        <input class="student-card_userpic-control" type="text" id="userpic" name="userpic" placeholder="" value="{{userpic}}" required>
+                        <input class="student-card_userpic-control" type="text" id="userpic" name="userpic" placeholder="" value="{{userpic}}">
+                        <span class="hint">Поддерживаются форматы jpg, png, gif</span>
                     </div>
                 </div>
 
@@ -74,7 +75,7 @@
 
                 </div>
             </div>
-            <div class="student-card_photo" style="background-image: url('{{userpic}}');">
+            <div class="student-card_photo" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}/img/default.png{{/if}}');">
                 <div class="student-card_photo_shadow"></div>
             </div>
 

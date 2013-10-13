@@ -36,6 +36,12 @@ body {
     border: 0;
 }
 
+.hint {
+    font-size: 0.8em;
+    font-style: italic;
+    color: silver;
+}
+
 .header {
     text-align: center;
     height: 50px;
@@ -57,7 +63,7 @@ body {
 .header__title,
 .students-title {
     font-weight: 600;
-    font-family: 'PT Sans Caption', sans-serif;
+    font-family: 'Georgia', sans-serif;
 }
 .header__title-link,
 .header__title-link:hover{
@@ -111,9 +117,18 @@ body {
 }
 
 .header__links__item_link {
-    color: #1394D8;
+    color: #6d6d6d;
     border: 0;
 
+}
+
+.header__links__item:hover .header__links__item_link {
+    -webkit-transition: color 0.2s ease 0s;
+    -moz-transition: color 0.2s ease 0s;
+    -o-transition: color 0.2s ease 0s;
+    transition: color 0.2s ease 0s;
+
+    color: #ff3a3f;
 }
 
 .header__links__item_current {
@@ -127,7 +142,7 @@ body {
 }
 
 .caption {
-    color: gray;
+    color: #4f4f4f;
     font-size: 0.8em;
 }
 
@@ -140,9 +155,11 @@ body {
     float: left;
 
     border: 1px silver solid;
-    background: #F2F2F2;
+    background-color: #F2F2F2;
     margin: 0 10px 10px 10px;
     padding: 20px;
+    position: relative;
+
 }
 
 .entity-list__item_m {
@@ -154,5 +171,11 @@ body {
 }
 
 .entity-list__item_colored {
+
+    -webkit-transition: background-color 0.5s ease 0s;
+    -moz-transition: background-color 0.5s ease 0s;
+    -o-transition: background-color 0.5s ease 0s;
+    transition: background-color 0.5s ease 0s;
+
     background-color: #FDF7DC;
 }

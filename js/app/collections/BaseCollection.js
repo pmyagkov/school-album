@@ -6,6 +6,16 @@ define(['backbone'], function (Backbone) {
 
         },
 
+        getLatestId: function () {
+            "use strict";
+
+            var id = 1;
+            this.each(function (e) {
+                id = e.id > id ? e.id : id;
+            });
+            return id;
+        },
+
         save: function () {
             "use strict";
 

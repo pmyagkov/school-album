@@ -162,5 +162,10 @@ label.error {
 
 .student-card_userpic-control {
     width: 606px;
+    font-size: 0.9em;
 }
 
+.entity-list__item_remove {
+    position: absolute;
+    top: 0; right: 0;
+}

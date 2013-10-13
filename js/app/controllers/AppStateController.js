@@ -120,7 +120,13 @@ define([
         },
 
         saved: function (event, student) {
-            this._data.students.create(student, {at: 0});
+
+            if (!student.id) {
+                var latestId = this._data.students.getLatestId();
+                student.set("id", latestId + 1);
+            }
+
+            this._data.students.create(student);
             student.set("isNew", true);
             this.trigger("navigate", this.getRoute(this._layouts.getCurrentLayout().getTransition(event)));
         },

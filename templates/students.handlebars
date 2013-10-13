@@ -8,22 +8,23 @@
 
     <ul class="entity-list">
         {{#each .}}
-            <li class="entity-list__item entity-list__item_s {{#if isNew}}entity-list__item_colored{{/if}}">
-                <span class="student-list__item__userpic" style="background-image: url('{{userpic}}');">
+            <li class="entity-list__item entity-list__item_s entity-list__item_{{id}}" data-id="{{id}}">
+                <a class="entity-list__item_remove link link_i" href="#"><i class="icon-remove"></i></a>
+                <span class="student-list__item__userpic" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}img/default.png{{/if}}');">
 
                 </span>
 
                 <span class="student-list__item__name">
                     <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
                 </span>
-
+<!--
                 <ul class="socials">
                 {{#each links}}
                     <li class="socials__item">
-                        <a class="socials__item_link link link_i" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
+                        <a class="socials__item_link link link_i" target="_blank" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
                     </li>
                 {{/each}}
-                </ul>
+                </ul>-->
             </li>
         {{/each}}
     </ul>
