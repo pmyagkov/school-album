@@ -10,9 +10,12 @@
         {{#each .}}
             <li class="entity-list__item entity-list__item_s entity-list__item_{{id}}" data-id="{{id}}">
                 <a class="entity-list__item_remove link link_i" href="#"><i class="icon-remove"></i></a>
-                <span class="student-list__item__userpic" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}img/default.png{{/if}}');">
+                <a class="link_i" href="#!/students/{{id}}">
+                    <span class="student-list__item__userpic" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}img/default.png{{/if}}');">
+                    </span>
+                </a>
 
-                </span>
+
 
                 <span class="student-list__item__name">
                     <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>

@@ -11,7 +11,7 @@ require(['sinon', 'underscore', 'backbone', 'AppStateController',
 
             _.each(viewCtors, function (viewCtor) {
                 var key = viewCtor.name[0].toLowerCase() + viewCtor.name.substr(1);
-                self[key] = new viewCtor({model: {on: function () {}}});
+                self[key] = new viewCtor({model: {on: function () {}, off: function () {}}});
             });
         }
 

@@ -68,17 +68,33 @@ define([
 
     var ctor = function AppStateController(layoutsObj, dataObj) {
         if (!_instance) {
+
+
+            var lecturersArray = _.map(dataObj.lecturers, function (lecturer) {
+                var extended = _.extend(lecturer, {lectures: _.where(dataObj.lectures, {lecturerId: lecturer.id})});
+
+                return new LecturerModel(extended);
+            });
+/*
+            var lectures = _.map(dataObj.lectures, function (lecture) {
+
+                return new LectureModel(extended);
+            });*/
+
+
             // information about possible layouts, views, routes, etc.
             this._layouts = new LayoutCollection(layoutsObj);
-            var lecturers = new LecturerCollection(dataObj.lecturers);
+            var lecturers = new LecturerCollection(lecturersArray);
+            var lectures = new LectureCollection(_(lecturersArray).chain().map(function (e) {
+                return e.get("lectures").models;
+            }).flatten().uniq().value());
+
             this._data = {
                 about: new AboutModel(dataObj.about),
                 students: fetchCollection(StudentCollection, dataObj.students),
-                lectures: new LectureCollection(dataObj.lectures, {lecturers: lecturers}),
+                lectures: lectures,
                 lecturers: lecturers
             };
-            lecturers.addLectures(this._data.lectures);
-
 
             this._renderedViews = [];
             this._currentLayout = "";
@@ -93,7 +109,7 @@ define([
 
     ctor.release = function () {
         _instance = undefined;
-        this._renderedViews = [];
+        Backbone.Relational.store.reset();
     };
 
     ctor.prototype = {

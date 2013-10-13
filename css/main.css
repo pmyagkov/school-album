@@ -84,15 +84,22 @@ body {
 
 }
 
-.header__title,
-.header__links {
+.header__title {
     float: left;
     width: 49%;
 }
 
 .header__links {
+    float: right;
+}
+
+.header__links {
     border-left: 1px silver solid;
     text-align: center;
+}
+
+.header__links__item:last-child {
+    border-right: 0 !important;
 }
 
 .header__links__item {
@@ -178,4 +185,9 @@ body {
     transition: background-color 0.5s ease 0s;
 
     background-color: #FDF7DC;
+}
+
+.toast-panel {
+    position: absolute;
+    left: 20px; top: 20px;
 }

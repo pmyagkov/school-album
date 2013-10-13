@@ -1,24 +1,35 @@
 /* global require */
 
 requirejs(['backbone', 'jquery', 'underscore',
+    'toastr',
+
     'Router', 'events', 'AppStateController', 'Utils',
 
     'layoutsObj',
     'dataObj'],
 
-    function (Backbone, $, _, Router, events, AppStateController, Utils, layoutsObj, dataObj) {
+    function (Backbone, $, _, toastr, Router, events, AppStateController, Utils, layoutsObj, dataObj) {
         "use strict";
 
         var appStateController = new AppStateController(layoutsObj, dataObj);
         var router = new Router(appStateController);
 
+        toastr.options = {
+            positionClass: 'toast-panel',
+            timeOut: 3000,
+            fadeIn: 300,
+            fadeOut: 1000
+        };
+
+        window.onerror = function()  {
+            toastr.error('Произошли неожиданные ошибки. Не соблаговолите ли проследовать в консоль?', 'Аларм!');
+        };
 
 
 
 
 
-
-
+        // scroll fix
 
         if (!window._ua) {
             var _ua = navigator.userAgent.toLowerCase();
