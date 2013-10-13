@@ -1,9 +1,15 @@
 <div class="students">
-    <h2 class="header-title">В этом году в школе учились:</h2>
+    <h2 class="header-title">
+        В этом году в школе учились:
+        <a class="link link_i" href="#!/students/add" title="Добавить студента">
+            <span class="students_add-icon"><i class="icon-user-add"></i></span>
+        </a>
+    </h2>
+
     <ul class="entity-list">
         {{#each .}}
-            <li class="entity-list__item entity-list__item_s">
-                <span class="student-list__item__userpic" style="background-image: url({{userpic}});">
+            <li class="entity-list__item entity-list__item_s {{#if isNew}}entity-list__item_colored{{/if}}">
+                <span class="student-list__item__userpic" style="background-image: url('{{userpic}}');">
 
                 </span>
 
@@ -14,7 +20,7 @@
                 <ul class="socials">
                 {{#each links}}
                     <li class="socials__item">
-                        <a class="socials__item_link" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
+                        <a class="socials__item_link link link_i" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
                     </li>
                 {{/each}}
                 </ul>

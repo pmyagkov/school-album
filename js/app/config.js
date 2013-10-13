@@ -11,7 +11,9 @@ requirejs.config({
         "jquery.validate": '../lib/jquery.validate',
         handlebars: '../lib/handlebars-runtime',
         // app
-        Router: 'Router',
+        // controllers
+        Router: 'controllers/Router',
+        AppStateController: 'controllers/AppStateController',
         // objects
         events: 'Events',
         layoutsObj: 'data/layouts',
@@ -40,6 +42,7 @@ requirejs.config({
         LectureView: 'views/LectureView',
         LecturesView: 'views/LecturesView',
         LecturerView: 'views/LecturerView',
+        LecturersView: 'views/LecturersView',
         TwitterView: 'views/TwitterView',
         BaseView: 'views/BaseView',
         ViewFactory: 'views/ViewFactory',

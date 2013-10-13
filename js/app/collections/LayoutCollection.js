@@ -14,15 +14,18 @@ define(['backbone', 'localStorage', 'BaseCollection', 'LayoutModel'],
 
             },
 
-            setCurrent: function (layoutName) {
+            setCurrentLayout: function (layoutName) {
 
                 var currentLayout;
                 this.each(function (e, i) {
-                    e.setCurrent(e.id === layoutName);
+                    e.setCurrentLayout(e.id === layoutName);
                     if (e.id === layoutName) {
                         currentLayout = e;
                     }
                 });
+            },
+            getCurrentLayout: function () {
+                return this.find(function (e) { return e.get("current");})
             },
 
             localStorage: new Backbone.LocalStorage("LayoutCollection")

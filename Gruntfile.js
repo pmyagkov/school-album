@@ -47,7 +47,9 @@
                     tasks: ['handlebars:compile']
                 },
                 jasmine: {
-                    files: ['js/testConfig.js', 'js/specs/*Spec.js', 'js/app/*.js', 'js/collections/*.js', 'js/models/*.js', 'js/views/*.js'],
+                    files: ['js/testConfig.js', 'js/specs/*Spec.js', 'js/app/*.js',
+                        'js/collections/*.js', 'js/models/*.js', 'js/views/*.js',
+                        'js/controllers/*.js'],
                     tasks: ['jasmine:test']
                 },
                 grunt: {

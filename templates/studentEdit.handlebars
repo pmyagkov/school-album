@@ -2,12 +2,13 @@
     <form>
         <h2 class="header-title">
             Карточка студента
-            <a class="student-edit_link-save link link_i" href="#" title="Сохранить карточку">
-                <span class=""><i class="icon-save"></i></span>
-            </a>
-            <a class="student-edit_link-discard link link_i" href="#" title="Отменить редактирование">
-                <span class=""><i class="icon-remove"></i></span>
-            </a>
+            <button type="submit" class="student-edit_button-save">
+                <i class="icon-save"></i>
+            </button>
+            <button type="reset" class="student-edit_button-reset">
+                <i class="icon-remove"></i>
+            </button>
+
         </h2>
         <div class="student-card">
 
@@ -30,6 +31,16 @@
 
 
                 </div>
+
+                <div class="student-card_userpic">
+                    <div class="caption caption_v">
+                        Ссылка на фото:
+                    </div>
+                    <div class="student-card_userpic-control-wrapper control-wrapper">
+                        <input class="student-card_userpic-control" type="text" id="userpic" name="userpic" placeholder="" value="{{userpic}}" required>
+                    </div>
+                </div>
+
                 <div class="student-card_socials student-card_socials_edit">
                     <div class="caption caption_v">
                         Ссылки на профили:
@@ -53,14 +64,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="student-card_userpic">
-                    <div class="caption caption_v">
-                        Ссылка на фото:
-                    </div>
-                    <div class="student-card_userpic-control-wrapper control-wrapper">
-                        <input class="student-card_userpic-control" type="text" id="userpic" name="userpic" placeholder="" value="{{userpic}}" required>
-                    </div>
-                </div>
+
                 <div class="student-card_about">
                     <div class="caption caption_v">О себе:</div>
                     <textarea name="about" class="student-card_about-control">{{about}}</textarea>

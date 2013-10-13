@@ -12,8 +12,8 @@ define(['backbone', 'underscore', 'Utils', 'templates', 'helpers'], function (Ba
 
             var templateName = Utils.extractViewName(this.constructor.name);
             if (options && options.command) {
-                this._command = options.command;
-                templateName += options.command[0].toUpperCase() + options.command.substr(1);
+                this._command = options.command === "add" ? "edit" : options.command;
+                templateName += this._command[0].toUpperCase() + this._command.substr(1);
             }
 
 

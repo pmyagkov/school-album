@@ -4,18 +4,11 @@ define(['BaseView'], function (BaseView) {
 
     var parent = BaseView;
     return parent.extend({
-        constructor: function StudentsView() {
+        constructor: function LecturersView() {
             parent.prototype.constructor.apply(this, arguments);
         },
         initialize: function () {
             parent.prototype.initialize.apply(this, arguments);
-        },
-
-        render: function () {
-            parent.prototype.render.apply(this, arguments);
-            // clear isNew fields of models
-            this.model.clearNew();
         }
-
     });
 });

@@ -9,12 +9,23 @@ define(['backbone', 'localStorage', 'BaseCollection', 'StudentModel'],
             constructor: function StudentCollection() {
                 parent.apply(this, arguments);
             },
+            initialize: function (students) {
+            },
+
+            comparator: function (student) {
+                return student.get("created");
+            },
 
             model: StudentModel,
             localStorage: new Backbone.LocalStorage("StudentCollection"),
-            initialize: function (students) {
-                this.fetch();
+
+            clearNew: function () {
+                this.each(function (e) {
+                    e.set("isNew", false, {silent: true});
+                })
             }
+
+
         });
     }
 );

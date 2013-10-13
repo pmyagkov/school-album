@@ -13,8 +13,14 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "students", el: ".content"}]
         },
         {
+            id: "addStudent", route: "!/students/add",
+            views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}],
+            transitions: {"save": "students", "discard": "students"}
+        },
+        {
             id: "student", route: "!/students/:i(/:command)",
-            views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}]
+            views: [{id: "header", el: ".header"}, {id: "student", el: ".content"}],
+            transitions: {"save": "students", "discard": "students"}
         },
         {
             id: "lectures", route: "!/lectures", title: "Лекции",
@@ -25,7 +31,7 @@ define(function () {
             views: [{id: "header", el: ".header"}, {id: "lecture", el: ".content"}]
         },
         {
-            id: "lecturers", route: "!/lecturers",
+            id: "lecturers", route: "!/lecturers", title: "Лекторы",
             views: [{id: "header", el: ".header"}, {id: "lecturers", el: ".content"}]
         },
         {

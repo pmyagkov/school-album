@@ -8,7 +8,7 @@ ul {
 a {
     text-decoration: none;
     color: black;
-    border-bottom: 1px black dashed;
+    border-bottom: 1px black solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,4 +19,16 @@ h1, h2, h3, h4, h5, h6 {
 input[type=text].error {
     outline: 1px red solid;
 
+}
+
+button {
+    background: none;
+    border: 0;
+    color: #5e5e5e;
+    padding: 0;
+    outline: 0;
+}
+
+button:hover {
+    color: #ff3a3f;
 }

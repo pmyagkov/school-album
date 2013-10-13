@@ -6,7 +6,7 @@
 <div class="header__links">
     {{#each .}}
         {{#if title}}
-            <div class="header__links__item header__links__item_{{id}}">
+            <div class="header__links__item header__links__item_{{id}}" data-layout="{{id}}">
                 <a class="header__links__item_link" href="#{{route}}">{{title}}</a>
             </div>
         {{/if}}
