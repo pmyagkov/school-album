@@ -12,7 +12,9 @@
     * [WebStorm 7](http://www.jetbrains.com/webstorm/)
 * Фреймворки/библиотеки:
     * [require.js](http://requirejs.org/)
-    * [Backbone.js](http://backbonejs.org/) + [localStorage](https://github.com/jeromegn/Backbone.localStorage)
+    * [Backbone](http://backbonejs.org/)
+    * [Backbone LocalStorage](https://github.com/jeromegn/Backbone.localStorage)
+    * [Backbone Relational](http://backbonerelational.org/)
     * [Underscore.js](http://underscorejs.org/)
     * [jQuery](http://jquery.com/)
     * [jQuery Validation](http://jqueryvalidation.org/)
