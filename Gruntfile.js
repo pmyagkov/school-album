@@ -113,7 +113,7 @@
         grunt.loadNpmTasks('grunt-contrib-uglify');
 
         // Default task(s).
-        grunt.registerTask('default', ['handlebars:compile', 'cssmin', 'connect', 'watch']);
+        grunt.registerTask('default', ['handlebars:compile', 'connect', 'watch']);
         grunt.registerTask('prod', ['handlebars:compile', 'cssmin', 'uglify','jasmine:test']);
 
     };
