@@ -7,14 +7,6 @@
     margin: 0 0 20px 0;
 }
 
-.search {
-    float: right;
-}
-
-.search-control{
-    font-size: 0.7em;
-}
-
 .item_left,
 .item_right{
     float: left;
@@ -41,7 +33,6 @@
 .entity-list__item:hover .entity-list__item_remove {
     display: block;
 }
-
 
 .student-list__item__userpic {
     border: 1px silver solid;
@@ -93,7 +84,6 @@
     margin: 0 0 0 10px;
 }
 
-
 .student-card_info {
     float: left;
     width: 630px;
@@ -142,6 +132,7 @@
     margin: 0;
     display: block;
 }
+
 .student-card_socials-list_edit {
     margin: 0 0 20px 0;
 }
@@ -155,12 +146,9 @@
 
 }
 
-
 .student-card_socials__item {
     float: left;
-    margin: 0 7px 0 0;
-    /*width: 20px;
-    height: 20px;*/
+    margin: 0 5px 0 5px;
 }
 
 .student-card_socials-list__item_control {
@@ -193,13 +181,6 @@
 }
 .control-wrapper input {
     display: block;
-}
-
-label.error {
-    color: #ff3a3f;
-    font-size: 0.8em;
-    float: left;
-    margin: 2px 0 0 0;
 }
 
 .student-card_userpic-control {

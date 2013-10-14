@@ -6,22 +6,25 @@ define(['backbone', 'underscore'], function (Backbone, _) {
     var parent = Backbone.Model;
 
     return parent.extend({
-        constructor: function StudentModel() {
+        constructor: function StudentModel(attrs) {
             parent.apply(this, arguments);
         },
 
         initialize: function () {
+            this.set("links", this._normalizeLinks(this.get("links")));
             this.on("change:links", _.bind(this.normalizeLinks, this));
         },
 
-        normalizeLinks: function () {
-            var links = this.get("links");
+        _normalizeLinks: function (links) {
             _.each(links, function (e, i) {
                 if (e && e.indexOf("http") === -1) {
                     links[i] = "http://" + e;
                 }
             });
-            this.set("links", links);
+            return links;
+        },
+        normalizeLinks: function () {
+            this.set("links", this._normalizeLinks(this.get("links")));
         }
 
 
