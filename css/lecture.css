@@ -1,15 +1,15 @@
 
 
-.lectures-list__item_title {
+.lecture-list__item_title {
     font-size: 1.3em;
     margin: 0 0 15px 0;
 }
 
-.lectures-list__item_name {
+.lecture-list__item_name {
     margin: 0 0 3px 0;
 }
 
-.lectures-list__item_date {
+.lecture-list__item_date {
     color: black;
     font-size: 0.9em;
 }

@@ -1,23 +1,40 @@
 <div class="students">
-    <h2 class="header-title">В этом году в школе учились:</h2>
+    <h2 class="header-title">
+        В этом году в школе учились:
+        <a class="link link_i" href="#!/students/add" title="Добавить студента">
+            <span class="students_add-icon"><i class="icon-user-add"></i></span>
+        </a>
+        <div class="search">
+            <i class="icon-search"></i>
+            <input type="text" class="search-control">
+        </div>
+    </h2>
+
     <ul class="entity-list">
         {{#each .}}
-            <li class="entity-list__item entity-list__item_s">
-                <span class="student-list__item__userpic" style="background-image: url({{userpic}});">
+            <li class="entity-list__item entity-list__item_s entity-list__item_{{id}}" data-id="{{id}}">
+                <a class="entity-list__item_remove link link_i" href="#"><i class="icon-remove"></i></a>
+                <div class="item_left">
+                    <a class="link_i" href="#!/students/{{id}}">
+                        <span class="student-list__item__userpic" style="background-image: url('{{#if userpic}}{{userpic}}{{else}}img/default.png{{/if}}');">
+                        </span>
+                    </a>
+                </div>
+                <div class="item_right">
+                    <span class="student-list__item__name">
+                        <a class="link for-search" href="#!/students/{{id}}">{{firstName}} {{lastName}}</a>
+                    </span>
+                    <span class="student-list__item__city-wrapper">
+                        <span class="caption">из города&nbsp;</span>
+                        <span class="student-list__item__city for-search">
+                            {{city}}
+                        </span>
+                    </span>
+                </div>
 
-                </span>
 
-                <span class="student-list__item__name">
-                    <a class="link" href="#!/students/{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
-                </span>
 
-                <ul class="socials">
-                {{#each links}}
-                    <li class="socials__item">
-                        <a class="socials__item_link" href="{{this}}" title="{{@key}}"><i class="icon-{{@key}}"></i></a>
-                    </li>
-                {{/each}}
-                </ul>
+
             </li>
         {{/each}}
     </ul>

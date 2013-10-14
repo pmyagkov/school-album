@@ -1,7 +1,57 @@
-/* global require */
-requirejs.config({
-    deps: ['app'],
-    baseUrl: 'js/app',
+({
+    baseUrl: './js/app',
+    name: 'config',
+    out: 'js/app/config.min.js',
+
+    include: [
+        "backbone",
+        "localStorage",
+        "relational",
+        "underscore",
+        "jquery",
+        "jquery.validate",
+        "handlebars",
+        // app
+        // controllers
+        "Router",
+        "AppStateController",
+        // objects
+        "events",
+        "layoutsObj",
+        "dataObj",
+        // utils
+        "Utils",
+        "helpers",
+        // models
+        "AboutModel",
+        "LayoutModel",
+        "StudentModel",
+        "LectureModel",
+        "LecturerModel",
+        // collections
+        "BaseCollection",
+        "LayoutCollection",
+        "StudentCollection",
+        "LectureCollection",
+        "LecturerCollection",
+        // views
+        "HeaderView",
+        "AboutView",
+        "StudentView",
+        "StudentsView",
+        "LectureView",
+        "LecturesView",
+        "LecturerView",
+        "LecturersView",
+        "TwitterView",
+        "BaseView",
+        //templates
+        "templates"
+    ],
+    fileExclusionRegExp: /^((r|build|Gruntfile)\.js)$/,
+    optimizeCss: 'none',
+    removeCombined: false,
+    useString: true,
     paths: {
         // libs
         backbone: '../lib/backbone-min',
@@ -23,7 +73,6 @@ requirejs.config({
         Utils: 'Utils',
         helpers: 'helpers/handlebarsHelpers',
         // models
-        AppState: 'models/AppState',
         AboutModel: 'models/AboutModel',
         LayoutModel: 'models/LayoutModel',
         StudentModel: 'models/StudentModel',
@@ -49,7 +98,6 @@ requirejs.config({
         //templates
         templates: 'compiled/templates'
     },
-
     shim: {
         underscore: {
             deps: [],
@@ -77,6 +125,4 @@ requirejs.config({
         }
 
     }
-});
-
-
+})

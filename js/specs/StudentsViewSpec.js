@@ -6,7 +6,7 @@ define(['StudentsView', 'StudentCollection'], function (StudentsView, StudentCol
     describe("StudentsView", function () {
         it("should have a constructor named StudentsView", function () {
             var view = new StudentsView();
-            expect(view.constructor.name).toBe("StudentsView");
+            expect(view.constructorName).toBe("StudentsView");
         });
     });
 

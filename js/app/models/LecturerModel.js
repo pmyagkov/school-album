@@ -1,11 +1,24 @@
 /* global define */
 
-define(['backbone', 'underscore'], function (Backbone, _) {
+define(['relational', 'underscore', 'LectureModel', 'LectureCollection'], function (Backbone, _, LectureModel, LectureCollection) {
     "use strict";
 
-    var parent = Backbone.Model;
+    var parent = Backbone.RelationalModel;
 
     return parent.extend({
+        relations: [
+            {
+                type: "HasMany",
+                key: "lectures",
+                includeInJSON: true,
+                relatedModel: LectureModel,
+                collectionType: LectureCollection,
+                reverseRelation: {
+                    includeInJson: true,
+                    key: "lecturer"
+                }
+            }
+        ],
         constructor: function LecturerModel() {
             parent.apply(this, arguments);
         },
@@ -17,15 +30,9 @@ define(['backbone', 'underscore'], function (Backbone, _) {
             }
         },
 
-        addLectures: function (lectures) {
-            if (!this._lectures) {
-                this._lectures = lectures;
-            }
-        },
-
         getLectures: function () {
-            return this._lectures;
-        },
+            return this.get("lectures");
+        }/*,
 
         toJSON: function () {
             var attrs = parent.prototype.toJSON.apply(this, arguments);
@@ -36,6 +43,6 @@ define(['backbone', 'underscore'], function (Backbone, _) {
             });
 
             return attrs;
-        }
+        }*/
     });
 });
